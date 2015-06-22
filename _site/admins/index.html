@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>WILL Website Manual for CMS Administrators - WILL Website Manual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/_site/assets/css/bootstrap.css">
+    
+
+    <link rel="stylesheet" href="/_site/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/_site/assets/css/docs.css">
+    <link rel="stylesheet" href="/_site/assets/js/google-code-prettify/prettify.css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/ico/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="mailto:will-web@illinois.edu?subject=website_issues">contact the Webmaster</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="/_site/">Home</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Content Authors
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/intro">Website Introduction &amp; Structure</a></li>
+                  <li><a href="/_site/publish">How to Publish Web Content</a></li>
+                  <li><a href="/_site/digitalmedia">Digital Media Essentials</a></li>
+                  <li><a href="/_site/metadata">Good Metadata Practices</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="/#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Section &amp; Project Owners
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/branding">Digital Content Branding Specification</a></li>
+                </ul>
+              </li>   
+
+              <li class="dropdown">
+                <a href="/#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Site Managers
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/framework">CMS Framework</a></li>
+                  <li><a href="/_site/pages">Unique Pages</a></li>
+                </ul>
+              </li>  
+              <!--
+              <li class="">
+                <a href="/_site/admins">For CMS Admins</a>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>WILL Website Manual for CMS Administrators</h1>
+    <p class="lead">How to Keep Things Working</p>
+
+    <div id="carbonads-container">
+      <div class="carbonad">
+        <img src="/assets/img/CP-Home-ExpressionEngine.png" />
+      </div>
+    </div>    
+</header>
+
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#will-pages"><i class="icon-chevron-right"></i> WILL Pages</a> 
+          <li><a href="#foundation"><i class="icon-chevron-right"></i> Foundation framework</a></li>
+          <li><a href="#site-components"><i class="icon-chevron-right"></i> Site Components</a></li>
+          <li><a href="#field-group"><i class="icon-chevron-right"></i> One Field Group to Rule Them All</a></li>
+          <li><a href="#templates"><i class="icon-chevron-right"></i> Template Structure</a></li>
+          <li><a href="#snippets"><i class="icon-chevron-right"></i> Snippets</a></li>
+          <li><a href="#gv"><i class="icon-chevron-right"></i> Global Variables</a></li>
+          <li><a href="#embeds"><i class="icon-chevron-right"></i> Embeds</a></li>
+          <li><a href="#addons"><i class="icon-chevron-right"></i> Addons</a></li>
+          <li><a href="#updating"><i class="icon-chevron-right"></i> Updating the CMS</a></li>
+        </ul>
+      </div> <!-- span3 -->
+      
+      <div class="span9">
+
+
+    <!-- Why ExpressionEngine
+    ================================================== -->
+        <section id="will-pages">
+          <div class="page-header">
+            <h2>WILL Pages</h2>
+          </div>
+          <p class="lead">WILL Pages are stand-alone web pages that are mostly static. They could be hand-coded but that would require any edits to be made by the Webmaster, so we're using the EE Pages Module to maintain them. There are a few <strong>very important pages</strong> with particular quirks.</p>
+          <p>The most important of these is the <a href="http://willpledge.org">Contribute to WILL</a> page. You'll find it in the WILL Pages section and its title is (duh) "Contribute to WILL". The Description field of this entry contains links to our currently-valid pledge forms. These forms are hosted on another server: the Allegiance Web Module server hosted at AITS. The forms themselves are created and maintained by Brenda Zimmerman in WILL's Development department. </p>
+          <p><i class="icon-hand-right"></i> <em>Brenda creates new forms from time to time, and will then give you links to the new forms.</em> You will simply edit the <em>Contribute to WILL</em> WILL Pages entry to update its links to the new forms.</p>  
+      </section>
+        
+        <!-- Logging into the CMS
+        ================================================== -->
+        <section id="foundation">
+          <div class="page-header">
+            <h2>The Foundation framework</h2>
+          </div>
+          <p class="lead">The WILL website uses the <a href="http://foundation.zurb.com/">Zurb Foundation responsive web design framework</a>.</p> 
+          <p>Foundation provides a responsive grid and a useful set of element styles like buttons, forms, labels, and navigation. It also has a very useful JavaScript library based on JQuery, for things like slideshows, tabs, accordions, etc. Each of these elements can easily be re-styled.</p>
+          <p><i class="icon-hand-right"></i> <em>The WILL site currently uses Foundation 2.1, but Foundation is under rapid development and as of July 1, 2013 is at version 4.0. We have not yet mapped out an upgrade path, but it's important to note that later versions of Foundation leave behind IE 7 and 8. At some point we'll leave those browsers behind too, but for now we are supporting them.</em></p>          
+        </section>
+
+    <!-- Entry Date
+    ================================================== -->        
+        <section id="site-components">
+          <div class="page-header">
+            <h2>Site Components</h2>
+          </div>
+          <p class="lead">Every CMS-driven website consists of a bundle of things, like a file system, a database, scripts, and possibly a framework. Here is our bundle:</p>
+          <ul>
+            <li>ExpressionEngine CMS, running on a LAMP stack inside a virtual machine. Everything from the VM on up to the CMS is managed by Taylor Judd, our Internet Technology Specialist/SysAdmin.</li>
+            <li>the Foundation framework, mentioned above. The core Foundation files are in the <code>/themes/site_themes/foundation</code> folder on the server. Hence, they live outside of the EE database. These files include all the Foundation JavaScript, the never-edit-these Foundation stylesheets, an important images folder, and some custom icons. You'll also find a 'weather' folder here which contains custom JS and CSS files for the /weather page.</li>
+            <li>Important additional CSS files are contained in an EE template group named "stylesheets". The most important of these is app.css, which customizes and builds on the cost foundation.css file. Any further custom styles affecting our core markup should be added in app.css.</li>
+            <li>We're using MediaElement.js for our audio players. All the files for this are in <code>/themes/site_themes/mediaelement</code>.</li>
+            <li>The folder <code>/themes/site_themes/weather</code> contains the set of weather icons used in in our web pages.</li>
+            <li><code>/themes/site_themes/images</code>  contains images that may nor may not be important throughout the site. This is a bit of a mess: if any of these images is important, it ought to be stored somewhere else. So this is a clean-up item, but not a crisis.</li>
+            <li><code>/themes/site_themes/sitewide</code> is another folder of site images, most of which are deprecated and should be deleted. Picking through which ones can be deleted will be tricky but should be done at some point.</li>
+            <li><code>/themes/site_themes/support</code> contains images and other files that really should be somewhere else. More clean-up...</li>
+            <li>We're using a bunch of ExpressionEngine addons. We'll cover these in detail later. All the addon files are contained in <code>/ipmsys/expressionengine/third_party</code>, and <code>/themes/third_party</code>, the default location for EE addons.</li>
+            <li>We also set up a very important folder for uploading files through EE Entry forms: <code>/nfs</code> contains a large number of mp3 audio files, plus PDF documents and other allowed filetypes uploaded with entries for use on the site. The NFS share is mapped from the web server, and <strong>is not part of the standard EE install</strong>.</li>
+          </ul>
+           
+        </section>
+
+                                          
+        
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>Designed and built with gratitude and determination by the Illinois Public Media Department of New Media &amp; Innovation.</p>
+
+        <ul class="footer-links">
+          <li><a href="http://willtech.tumblr.com/" target="_blank">New Media &amp; Innovation Blog</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="mailto:will-web@illinois.edu?subject=website_issues">Report Issues</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="/_site//assets/js/jquery.js"></script>   
+    <script src="/_site//assets/js/bootstrap-transition.js"></script>
+    <script src="/_site//assets/js/bootstrap-dropdown.js"></script>
+    <script src="/_site//assets/js/bootstrap-scrollspy.js"></script>
+    <script src="/_site//assets/js/bootstrap-tab.js"></script>
+    <script src="/_site//assets/js/bootstrap-tooltip.js"></script>
+    <script src="/_site//assets/js/bootstrap-popover.js"></script>
+    <script src="/_site//assets/js/bootstrap-button.js"></script>
+    <script src="/_site//assets/js/bootstrap-collapse.js"></script>
+    <script src="/_site//assets/js/bootstrap-carousel.js"></script>
+    <script src="/_site//assets/js/bootstrap-typeahead.js"></script>
+    <script src="/_site//assets/js/bootstrap-affix.js"></script>
+    <script src="/_site//assets/js/holder/holder.js"></script>
+    <script src="/_site//assets/js/google-code-prettify/prettify.js"></script>
+    <script src="/_site//assets/js/application.js"></script>
+    <script src="/_site//assets/js/back-to-top.js"></script>
+   	<a href="#0" class="cd-top">Top</a>
+
+
+  </body>
+</html>
+
+<!-- Localized -->

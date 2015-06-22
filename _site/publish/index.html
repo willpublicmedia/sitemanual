@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Publishing - WILL Website Manual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/_site/assets/css/bootstrap.css">
+    
+
+    <link rel="stylesheet" href="/_site/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/_site/assets/css/docs.css">
+    <link rel="stylesheet" href="/_site/assets/js/google-code-prettify/prettify.css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/ico/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="mailto:will-web@illinois.edu?subject=website_issues">contact the Webmaster</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="/_site/">Home</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Content Authors
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/intro">Website Introduction &amp; Structure</a></li>
+                  <li><a href="/_site/publish">How to Publish Web Content</a></li>
+                  <li><a href="/_site/digitalmedia">Digital Media Essentials</a></li>
+                  <li><a href="/_site/metadata">Good Metadata Practices</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="/#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Section &amp; Project Owners
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/branding">Digital Content Branding Specification</a></li>
+                </ul>
+              </li>   
+
+              <li class="dropdown">
+                <a href="/#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Site Managers
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/framework">CMS Framework</a></li>
+                  <li><a href="/_site/pages">Unique Pages</a></li>
+                </ul>
+              </li>  
+              <!--
+              <li class="">
+                <a href="/_site/admins">For CMS Admins</a>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>WILL Website Manual for Content Authors</h1>
+    <p class="lead">How to Publish Web Content: details on creating and editing content of all types</p>
+
+    <div id="carbonads-container">
+      <div class="carbonad">
+        <img src="http://jackatwill.com/_site/assets/img/WILL-Home-Page.png" width="250" alt="WILL Home page"/>
+      </div>
+    </div>    
+</header>
+
+
+
+  <div class="container cd-container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#logging-in"><i class="icon-chevron-right"></i> Logging into the CMS</a></li>
+          <li><a href="#edit-this"><i class="icon-chevron-right"></i> Easy Content Editing</a></li>                    
+          <li><a href="#field-entry-date"><i class="icon-chevron-right"></i> Entry Date</a></li>
+          <li><a href="#sticky"><i class="icon-chevron-right"></i> Sticky Entries</a></li>
+          <li><a href="#entry-title"><i class="icon-chevron-right"></i> Entry Title</a></li>
+          
+          <li><a href="#byline"><i class="icon-chevron-right"></i> Byline</a></li>
+          <li><a href="#description"><i class="icon-chevron-right"></i> Description</a></li>
+          <li><a href="#teaser"><i class="icon-chevron-right"></i> Teaser</a></li>
+          <li><a href="#images"><i class="icon-chevron-right"></i> Images</a></li>
+          <li><a href="#square-thumbnail"><i class="icon-chevron-right"></i> Square Thumbnail Image</a></li>
+          <li><a href="#audio-file"><i class="icon-chevron-right"></i> Audio File</a></li>
+          <li><a href="#video"><i class="icon-chevron-right"></i> Video Embed</a></li>
+          <li><a href="#weblinks"><i class="icon-chevron-right"></i> Links to other Web Pages</a></li>
+          <li><a href="#documents"><i class="icon-chevron-right"></i> Documents</a></li>
+          
+          
+          <li><a href="#owner"><i class="icon-chevron-right"></i> Owner</a></li>
+          <li><a href="#people"><i class="icon-chevron-right"></i> People</a></li>
+          <li><a href="#related"><i class="icon-chevron-right"></i> Related Entries</a></li>
+          
+          <li><a href="#transcript"><i class="icon-chevron-right"></i> Text Transcript</a></li>
+          
+        </ul>
+      </div> <!-- span3 -->
+      
+      <div class="span9">
+
+
+    <!-- How to Publish Web Content
+    ================================================== -->
+        <section id="about-fields">
+          <div class="page-header">
+            <h1>How to Publish Web Content</h1>
+          </div>
+          <p class="lead">You publish website content using our Content Management System by filling out Entry forms containing a number of different fields.</p>
+          <p>There are a number of different field types: text, rich text, image, upload, etc. This section of the manual covers the details of using each field. As a creator, you have freedom to create and publish great content in our system, but there are important requirements and limitations. We want to give users an awesome experience, but also a consistent one. Read and follow these instructions to reach the maximum possible audience, and make your job easier!</p>
+        </section>
+        
+        <!-- Logging into the CMS
+        ================================================== -->
+        <section id="logging-in">
+          <div class="page-header">
+            <h2>Logging into the CMS</h2>
+          </div>
+          <p class="lead">You create website content by:</p> 
+          <ul>
+            <li>logging into our CMS through a browser</li>
+            <li>choosing a section you want to post to (News, Focus, etc.)</li>
+            <li>filling out a new Entry form</li>
+          </ul>
+          <p>Access to the CMS is managed by the Webmaster, who will grant access to different sections of the site for different roles. When you log in, you have access to the sections assigned to you but not other sections.</p>
+          <p class="lead">Log in here: <a href="https://will.illinois.edu/admin.php?/cp/login" target="_blank">https://will.illinois.edu/admin.php?/cp/login</a></p>
+          <p><i class="icon-hand-right"></i> <em>If you forget your password, please use the “Forgot your password?” link on the login page. The Webmaster cannot reset your password, but you can easily do this any time.</em></p>
+          <p>Once you log in, you can create content in your site sections, and you can edit your existing content.</p>
+        </section>
+        
+    <!-- Entry Content the Easy Way
+    ================================================== -->        
+        <section id="edit-this">
+          <div class="page-header">
+            <h2>Edit Existing Content the Easy Way</h2>
+          </div>        
+          <p>Once you are logged in to the CMS, you can edit existing entries directly from the front-end of the website. One each Entry page, beneath the Title of the entry you'll see a link to Edit this entry:</p>
+          <img src="http://jackatwill.com/_site/assets/img/Edit-This.png" alt="Entry page with the Edit this entry link circled for clarity" />
+          <p>The Editing page for the entry will open in a new browser tab, where you can make whatever edits are needed.</p>
+          <img src="http://jackatwill.com/_site/assets/img/Edit-Entry.png" alt="Entry page in the CMS editor" />
+          <p><i class="icon-hand-right"></i> <em>Remember that the Edit links only display if you are already logged into the CMS. Users who just visit the site will never see these links.</em></p>
+        </section>
+
+    <!-- Entry Date
+    ================================================== -->        
+        <section id="field-entry-date">
+          <div class="page-header">
+            <h2>Entry Date</h2>
+          </div>
+          <p class="lead">At the very top of every Entry form is a field labeled Entry Date. It defaults to “today” and in many cases you don’t need to change it. (In some sections, Entry Date is located in a separate tab in the Entry form labeled “Date”.) If you need to change the Entry date, click inside the field and up pops a date picker:</p>
+          <img src="http://jackatwill.com/_site/assets/img/date-picker.png" alt="Date picker in an entry form" />
+          <p>You can edit the date and time by hand, instead of just using the date picker. But:</p>
+          <h4>You must stick to this format: “MM/DD/YY HH:MM AM” or the system won't recognize the date.</h4>
+          
+          <p>If you are adding an entry for a Radio or TV program in the past or future, be sure to select the date of broadcast. That date will appear on the web page with that program, and sort the entry correctly by date on List View pages.</p>
+
+          <p>Almost all entries on List View pages are displayed with the most recent at the top, and earlier entries sorted below that in descending order. Think of this like a Blog; newer entries push the older ones down the page. The only exception is if you make an entry Sticky, which keeps it at the top of the page. (If more than one entry is made Sticky, the sticky entries will sort themselves by date.)</p> 
+        </section>
+        
+
+    <!-- Future Entries
+    ================================================== -->
+        <section id="future-entries">
+          <div class="page-header">
+            <h3>Future Entries</h3>
+          </div>
+          <p class="lead">You can create an entry and give it an Entry Date any time in the future, and even specify it to the minute. Almost all sections of the site are set to NOT display “future entries,” so you can add entries for programs a week or month in advance and they won’t appear on the site until their Entry Dates.</p>
+        </section>
+        <section id="expiration-date">
+          <div class="page-header">
+            <h3>Expiration Date</h3>
+          </div>
+          <p class="lead">Some sections of the site can also set Expiration Dates, so content can be “unpublished” from the site at a set date and time.</p>
+          <p>For most broadcast programs, this isn’t relevant since we want to maintain a permanent program archive. If an entry can be expired, you’ll see a field in the entry form for Expiration Date.</p>
+          <p>When you click into the Entry or Expiration Date field, a date picker pops up. Best to use this by clicking the actual date in the date picker. You can manually edit the Entry Date, but be careful not to mistype something because that will break the date of the entry. You can type in the date field, but you must stick to this format: “MM-DD-YY HH:MM AM”.</p>
+        </section>
+                
+    <!-- Sticky
+    ================================================== -->                
+        <section id="sticky">
+          <div class="page-header">
+            <h2>Make an entry Sticky</h2>
+          </div>
+          <p class="lead">If you make an entry Sticky, it will stick to the top of whatever Listing page it's on. To make an entry Sticky, click the Options tab and check the box labeled Make Entry Sticky:</p>
+          <img src="http://jackatwill.com/_site/assets/img/sticky.png" alt="WILL Home page with the highlights and sidebar items labeled" />
+          <h4>When to use Sticky:</h4>
+          <ul>
+            <li>For Promotional items you want to keep at the top</li>
+            <li>For a big News story you want to display above the fold</li>
+          </ul>
+          <p>If several entries in the same section are set to Sticky, they will appear in descending date order.</p>
+        </section>   
+                        
+                
+        <!-- Entry title
+        ================================================== -->
+        <section id="entry-title">
+          <div class="page-header">
+            <h2>Entry Title (required)</h2>
+          </div>
+          <p class="lead">A good Title for each entry is extremely important. The Title is what first grabs people. </p>
+          
+          <p>Title is like the headline for a news story: “Cubs Chairman Ricketts Threatens to Move Team.” It catches eyes, but also search engine crawlers. Importantly, title also becomes the last part of the URL for that entry page:</p>
+          <code>http://will.illinois.edu/news/story/cubs-chairman-ricketts-threatens-to-move-team</code><br />
+          <h4>For Pages entries, the title may be simpler, like About WILL.</h4>          
+          <p>Above all, make the title mean something about the content. Please don’t use anything generic like “Program for June 3, 2013.”  You might think a user would understand it in context. But if the user is a search service crawling the site, all it sees is a link for “Program for June 3, 2013,” and that’s useless for making the actual content searchable. It also drags down our overall search engine ranking by making our site hard to index.</p>
+          <p>Think of it like this: the Entry Title is what shows up on Google. How do you want your content to be displayed on search results pages?</p> 
+        </section>
+
+
+        <!-- Byline
+        ================================================== -->
+
+        <section id="byline">
+          <div class="page-header">
+            <h2>Byline (optional)</h2>
+          </div>
+          <p class="lead">Any text entered in the Byline will appear at the top of the entry on web pages, e.g. “by John Adams.” Mostly used for News stories.</p>
+        </section>
+
+
+        <!-- Description
+        ================================================== -->
+
+        <section id="description">
+          <div class="page-header">
+            <h2>Description (required)</h2>
+          </div>
+          <p class="lead">The Description holds the main part of your entry. It should consist mostly of text, but can contain many other things: images, audio, video, and embed code. But unless you are writing a very rich and complex multimedia article, please use the Image, Audio, and Video fields for those things. Description should be the text of your entry.</p>
+          <p>Note the formatting strip at the top of the Description field:</p>
+          <img src="http://jackatwill.com/_site/assets/img/description-toolbar.png" alt="formatting buttons in the Description field" />
+          <p>Most of the options may be obvious: Bold and Italic work just like in Word and other text editing software. You can add hyperlinks to text by using the link button. Just highlight the text you want to make a hyperlink, then click the link button, and enter the full url to link to:</p>
+          <img src="http://jackatwill.com/_site/assets/img/adding-link.png" alt="Adding a hyperlink in the Description field" />
+        </section>
+
+        <!-- Teaser
+        ================================================== -->
+
+        <section id="teaser">
+          <div class="page-header">
+            <h2>Teaser (required)</h2>
+          </div>
+          <p class="lead">The Teaser field appears on all List pages as an introduction to the full entry. Engage the reader with the Teaser, so they will want to click on the full story.</p>
+          <img src="http://jackatwill.com/_site/assets/img/teaser.png" alt="the Teaser field with some text" />
+          <p>The Teaser will appear on the home page for each section, but not the full story page. If you include anything in the Teaser that's crucial to the full entry, make sure to include it in the entry Description. The idea of the Teaser is to draw people's attention and motivate them to read the full entry. See the <a href="http://www.npr.org" target="_blank">NPR website</a> for excellent examples. </p>
+          <p>You can add basic text formatting (bold or italics) and hyperlinks inside the Teaser field.</p>
+        </section>
+
+        <!-- Images
+        ================================================== -->
+        <section id="images">
+          <div class="page-header">
+            <h2>Images</h2>
+          </div>
+          <p class="lead">People are drawn to great images, and the web is a great place for them. You should add one or more great images for each Entry.</p>
+          <p>Even more important is consistent image size and shape. A List View page containing a wide variety of images with different sizes and shape looks jumbled and chaotic. Some variation is aesthetically pleasing, but only within a defined range of variations. (A great example is <a href="http://www.npr.org">http://www.npr.org</a>)</p>
+          <h4>The website CMS will automatically resize images for display on various pages</h4>  
+          <p>All you have to do is upload a great image into the Entry form, and the CMS creates all these sizes automatically. The image you upload should be 800px by 600px at a minimum. You can upload larger images, such as 1600x1200, or 2400x1800. Make sure to save them for the web in Photoshop, and use high quality export settings.</p>
+          <p>Images you upload are displayed in different sizes on List View page and single-Entry pages, on the Home page, and various other places.</p>
+          <h3>Important:</h3>
+          <ul>
+            <li>We must use only images for which we have the rights to publish.</li>
+            <li>You can add a Caption for display under the image on most web pages. (Captions don’t display in some places like the Slideshows.)</li>
+            <li>Describe the image for users with visual impairments. This is very very very important, and is a legal requirement for WILL as a state-funded institution. This description is added to the HTML code that renders the image, so if user cannot see the image she can still understand its meaning because her screen reader will read it aloud. </li>
+          </ul>
+          <p class="lead">Here is the Images field in the CMS:</p>
+          <img src="http://jackatwill.com/_site/assets/img/image-field-1.png" alt="the Images field in our CMS field">          
+          <p>Note the sub-fields you can use to add a caption, select "yes" or "no" for rights to reuse, add a description for visually-impaired users, a Photo Credit, and even make the image link to another web page. All sub-fields are optional <strong>except</strong> the description for blind users.</p> 
+          <p><i class="icon-hand-right"></i> <em>Federal and state laws require us to make our content understandable to people with visual and other impairments. The description of the image serves to make the image understandable to someone who can't see it. This is often very different from the Caption. Think of the Description this way: How would you describe the image in a single sentence to someone over the phone? That's what you should enter in the image Description sub-field</em>.</p>
+          <p class="lead">When you upload an image, make sure it is at least 800px wide by 600px tall. Even better, 1600x1200. This will ensure that the image looks good when displayed on single-entry pages.</p>
+          <p class="lead">Please note the little star, circled here in red:</p>
+          <img src="http://jackatwill.com/_site/assets/img/image-field.png" alt="the Images field in our CMS field">
+          <p>By default, this image will not be displayed at all on the single-entry page for this entry. To make it display you have to click the star:</p>
+          <img src="http://jackatwill.com/_site/assets/img/click-the-star.png" alt="click the star in the Images field to make the image display on the single-entry page">
+          <p>By clicking the star you make this image a "cover image" on the single-Entry page, which it will display at the top of the main text like this:</p>
+          <img src="http://jackatwill.com/_site/assets/img/story-page.png" alt="a cover image displayed on a single-entry page">
+          <h3>Why not show the image by default on single-Entry pages?</h3>
+          <p>Despite your best efforts, you might not be able to find an 800x600 image for every entry. Even though we really want consistency in our image sizes (at 800x600 minimum, and a landscape aspect ratio), there will be times when a different image shape (e.g. portrait) is the best choice for the story. On the single-Entry page, we don't want to enlarge a smaller image (which looks terrible) or display an odd-shaped image at the top of the text. So we made it optional. </p>
+          <p><i class="icon-hand-right"></i> <em>Even when the image isn't displayed on the single-Entry page, the image will appear in any social media "shares" and also appears in smaller size on the section home page</em>.</p>
+          <h3>You can add images by drag-and-drop</h3>
+          <p>Sure you can upload images by clicking the Upload Images link and browsing to the images you want. But you can also just drag and drop them straight into the Images field in the entry form. It's so much more fun.</p>
+          <p>And don't forget you can re-use uploaded images any time, by clicking the Stored Images link:</p>
+          <img src="http://jackatwill.com/_site/assets/img/stored-images.png" alt="the Stored Images link in the Images field in our CMS field">
+          <p>You can then use the search fields to find images by image name, caption, rights to reuse, photo credit, and all the other metadata added to the images when they were first uploaded. Hey, another reason to care about metadata!</p>
+          
+
+        </section>     
+        
+                      
+        <!-- Square Thumbnail Image 
+        ================================================== -->
+        <section id="square-thumbnail">
+          <div class="page-header">
+            <h2>Square Thumbnail Image (available for specific sections but not others)</h2>
+          </div>
+          <p class="lead">Square Thumbnails appear only on the Home pages, including the WILL Highlights/sidebar, News, Focus, Live & Local, and other local programs that have presence on the Home pages. They are designed to fit the small space there. </p>  
+          <p>The most important thing to know about adding them to Entries is this:</p>
+          <h4>Start with a square image, cropped the way you want it.</h4>
+          <p>Otherwise, adding Square Thumbnails is the same as adding regular Images.</p>
+        </section>   
+                
+                
+        <!-- Audio File
+        ================================================== -->
+        <section id="audio-file">
+          <div class="page-header">
+            <h2>Audio File (optional)</h2>
+          </div>
+          <p class="lead">Our website is set up to display a “Listen” button if you’ve added an mp3 audio file to a given entry. (Please note: ONLY mp3 files will work!)</p> 
+          <p>There are several ways to add an Audio file:</p>
+          <ul>
+            <li>Click Upload Files and browse to your mp3 file.</li>
+            <li>If you are reusing an mp3 file that has been uploaded previously (rare), you can click the Stored Files button and search for it.</li>
+            <li>But the easiest (and awesome-est) way to add an mp3 file is to drag and drop it from your computer right into the Audio File field in the Entry form.</li>
+          </ul>          
+          <p>For Pages entries, the title may be simpler, like About WILL.</p>          
+          <p>You can optionally add a Description of the audio file. This will appear just above the audio player, so users can understand without ambiguity what it is they are listening to.  But in many cases, this isn’t needed, because the Entry Title also will appear in the audio player. </p> 
+        </section>
+                
+
+        <!-- Video Embed
+        ================================================== -->
+        <section id="video">
+          <div class="page-header">
+            <h2>Video Embed (optional, available most sections)</h2>
+          </div>
+          <p class="lead">Adding video to Entries is easy: just paste in Embed code from YouTube, Vimeo, COVE, or any other standard video hosting site into the Video Embed field:</p>  
+          <img src="http://jackatwill.com/_site/assets/img/video-field.png" alt="using the video field" />
+          <p>You can optionally add a Video Title, which will appear as a header above the video on the web page. Often this isn’t needed, and may seem redundant, because the embedded video itself will display the title.</p>
+          
+          <h3>Advanced Video Embedding</h3>
+          <p>You can add more than one video per entry, but they will appear one after another on the web page. To get around this, you can also embed video directly in the Description field, and place it where you want in the body of text. Put your cursor in the Description field in the place you want to insert the video, and click the Embed button in the Description field toolbar:</p>
+          <img src="http://jackatwill.com/_site/assets/img/embed-video-1.png" alt="the Embed button in the toolbar" >
+          <p>In the pop up window that appears, past the video embed code:</p>
+          <img src="http://jackatwill.com/_site/assets/img/embed-video-2.png" alt="Embed code poasted into the embed dialogue box" >
+          <p>Click OK, and the video should now appear wherever you placed the cursor in the Description field. You can place several videos in a single entry, arrange them within blocks of text, etc., in this way:</p>
+          <img src="http://jackatwill.com/_site/assets/img/embed-video-3.png" alt="video displaying inside the Description field" />
+          
+        </section>     
+                            
+        <!-- Links to other Web Pages
+        ================================================== -->
+        <section id="weblinks">
+          <div class="page-header">
+            <h2>Links to other Web Pages (optional)</h2>
+          </div>
+          <p class="lead">If you add links they will appear on the web page. To do this:</p>
+          <ul>
+            <li>Click the “create_first_row” link</li>
+            <li>Type the Link Text you want to appear on the web page for the link</li>
+            <li>Type (or better yet copy and paste) the full URL for the link including the protocol (http:// or https://) in the Link URL field</li>
+            <li>If you want to add more links, click on the small plus sign and repeat</li>
+          </ul> 
+        </section>
+                            
+
+        <!-- Documents
+        ================================================== -->
+
+        <section id="documents">
+          <div class="page-header">
+            <h2>Documents</h2>
+          </div>
+          <p class="lead">You can upload a PDF or other text document, and a link will appear on the web page for that entry allowing the user to download that document. To upload a document:</p>
+
+          <ul>
+            <li>Click the “create_first_row” link in the Documents field</li>
+            <li>Click the Add File link, then the Upload File link that appears in the popup box</li>
+            <li>Choose the file, then click Upload File</li>
+            <li>Click on Use File</li>
+            <li>Back in the Documents entry form, add Link Text for this document. This is what the user will see on the web page.</li>
+            <li>If you want to add more Documents, click on the plus sign and repeat.</li>
+          </ul>
+          <p>Since the document is now on our web server, you can share a link to it anywhere you want: email, social media, and other web pages:</p>
+          <ul>
+            <li>Use the root: http://will.illinois.edu/nfs/</li>
+            <li>Add the filename and extension, e.g. mydocument.pdf</li>
+            <li>So the full URL to that document would be http://will.illinois.edu/nfs/mydocument.pdf</li>
+          </ul>
+          <p><i class="icon-hand-right"></i> Important: For all filenames, use only letters, numbers, underscores, or dashes. Any other special characters or spaces in the document filename will break the link for a small but significant number of users.</p>
+        </section>
+        
+        
+        <!-- Owner
+        ================================================== -->
+        <section id="owner">
+          <div class="page-header">
+            <h2>Owner (News section only)</h2>
+          </div>
+          <p class="lead">If the News story was created by someone other than Illinois Public Media, use the dropdown list to select the source. If this is a new source and isn’t on the list, contact the Webmaster.</p> 
+          <img src="http://jackatwill.com/_site/assets/img/owner.png" alt="the Embed owner field" />  
+          <img src="http://jackatwill.com/_site/assets/img/owner-2.png" alt="the Embed owner field" />       
+        </section>     
+        
+        
+        <!-- People
+        ================================================== -->
+        <section id="people">
+          <div class="page-header">
+            <h2>People (optional, not currently visible in most Entry forms)</h2>
+          </div>
+          <p class="lead">Currently, very few Entry forms include the People field but we will be expanding this.</p>        
+          <p>The purpose is to add really good metadata about the People relevant to the entry, including people interviewed, and people who produced the content. This makes our web content more search-engine friendly, and is used in things like RSS feeds and to make our web applications more powerful in many ways. If proper names are already contained in the Description field, it may seem redundant to repeat them in the People field, but actually it’s pretty important. As we add the People field to more Entry forms, we’ll need content authors to use them.</p>
+          <h4>Adding People is simple:</h4>
+          <ul>
+            <li>Enter Last Name</li>
+            <li>Enter First name</li>
+            <li>Enter the person’s role, like guest, interviewee, producer, host, etc. <strong>Use lowercase here!</strong></li>
+            <li>Enter the person’s Suffix if appropriate, e.g. M.D</li>
+            <li>Enter the person’s title and affiliation</li>
+          </ul> 
+          <h4>Example:</h4>
+          <img src="http://jackatwill.com/_site/assets/img/people.png" alt="using the People field" />
+        </section>             
+        
+        <!-- Related Entries
+        ================================================== -->
+        <section id="related">
+          <div class="page-header">
+            <h2>Related Entries (optional as needed)</h2>
+          </div>
+          <p class="lead">You can select one or more existing entries, and make them “related” to the one you are creating. This will pull the related entries into the Entry page like this:</p>  
+          <img src="http://jackatwill.com/_site/assets/img/related-stories.png" alt="related stories on a News page" />
+          <p>The easiest way to add a Related Entry is to use the “Filter by keywords” search box in the Related Entries field. You can also click the plus sign there to add a filter by Channel, Category, Author, or Status. You can use multiple filters to drill down even further but this probably won’t be necessary. Once you find the Entry you want to make related, just click and drag it from the left pane to the right:</p>
+          <img src="http://jackatwill.com/_site/assets/img/related-field.png" alt="using the People field" />
+          <p>You can add as many Related Entries as you need to.</p>
+        </section>     
+        
+          
+                
+        
+        <!-- Text Transcript
+        ================================================== -->
+        <section id="transcript">
+          <div class="page-header">
+            <h2>Text Transcript (optional)</h2>
+          </div>
+          <p class="lead">Text transcripts for audio or video content allow the content to be indexed by Google and other search engines. This makes the media content findable by search, and will lead to increased traffic. Transcripts are also important for accessibility</p>  
+          <p>To add a Transcript, simply past the full text into the Text Transcript field:</p>
+          <img src="http://jackatwill.com/_site/assets/img/transcript-field.png" alt="Text Transcript field in the Entry form" >
+          <p>The transcript will then be accessible on the entry's web page inside a collapsable container:</p>
+          <img src="http://jackatwill.com/_site/assets/img/transcript-collapse.png" alt="Text Transcript in a collapsable container" >
+          <p>Even when the transcript is collapsed, search engines can index the full text. Click the arrow to view the full transcript:</p>
+          <img src="http://jackatwill.com/_site/assets/img/transcript-expand.png" alt="Text Transcript field showing the full trqanscript" />
+        </section>     
+                                               
+        
+      </div>
+    </div>
+
+  </div>
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>Designed and built with gratitude and determination by the Illinois Public Media Department of New Media &amp; Innovation.</p>
+
+        <ul class="footer-links">
+          <li><a href="http://willtech.tumblr.com/" target="_blank">New Media &amp; Innovation Blog</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="mailto:will-web@illinois.edu?subject=website_issues">Report Issues</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="/_site//assets/js/jquery.js"></script>   
+    <script src="/_site//assets/js/bootstrap-transition.js"></script>
+    <script src="/_site//assets/js/bootstrap-dropdown.js"></script>
+    <script src="/_site//assets/js/bootstrap-scrollspy.js"></script>
+    <script src="/_site//assets/js/bootstrap-tab.js"></script>
+    <script src="/_site//assets/js/bootstrap-tooltip.js"></script>
+    <script src="/_site//assets/js/bootstrap-popover.js"></script>
+    <script src="/_site//assets/js/bootstrap-button.js"></script>
+    <script src="/_site//assets/js/bootstrap-collapse.js"></script>
+    <script src="/_site//assets/js/bootstrap-carousel.js"></script>
+    <script src="/_site//assets/js/bootstrap-typeahead.js"></script>
+    <script src="/_site//assets/js/bootstrap-affix.js"></script>
+    <script src="/_site//assets/js/holder/holder.js"></script>
+    <script src="/_site//assets/js/google-code-prettify/prettify.js"></script>
+    <script src="/_site//assets/js/application.js"></script>
+    <script src="/_site//assets/js/back-to-top.js"></script>
+   	<a href="#0" class="cd-top">Top</a>
+
+</html>
+
+<!-- Localized -->

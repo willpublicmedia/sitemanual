@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Metadata - WILL Website Manual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/_site/assets/css/bootstrap.css">
+    
+
+    <link rel="stylesheet" href="/_site/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/_site/assets/css/docs.css">
+    <link rel="stylesheet" href="/_site/assets/js/google-code-prettify/prettify.css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/ico/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="mailto:will-web@illinois.edu?subject=website_issues">contact the Webmaster</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="/_site/">Home</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Content Authors
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/intro">Website Introduction &amp; Structure</a></li>
+                  <li><a href="/_site/publish">How to Publish Web Content</a></li>
+                  <li><a href="/_site/digitalmedia">Digital Media Essentials</a></li>
+                  <li><a href="/_site/metadata">Good Metadata Practices</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="/#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Section &amp; Project Owners
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/branding">Digital Content Branding Specification</a></li>
+                </ul>
+              </li>   
+
+              <li class="dropdown">
+                <a href="/#" class="dropdown-toggle" data-toggle="dropdown">
+                  For Site Managers
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/_site/framework">CMS Framework</a></li>
+                  <li><a href="/_site/pages">Unique Pages</a></li>
+                </ul>
+              </li>  
+              <!--
+              <li class="">
+                <a href="/_site/admins">For CMS Admins</a>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>WILL Website Manual for Content Authors</h1>
+    <p class="lead">Metadata: Why it Matters and how to use it</p>
+
+    <div id="carbonads-container"><div class="carbonad">
+      <img src="http://jackatwill.com/_site/assets/img/WILL-Home-Page.png" width="250" alt="WILL Home page"/>
+    </div></div>    
+  
+  
+</header>
+
+
+  <div class="container cd-container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#what"><i class="icon-chevron-right"></i> What is Metadata?</a></li>
+          <li><a href="#robots"><i class="icon-chevron-right"></i> Spiders &amp; Web Crawlers</a>                    
+          <li><a href="#social-media"><i class="icon-chevron-right"></i>Social Media need Metadata</a></li>
+          <li><a href="#role"><i class="icon-chevron-right"></i>Your Role with Metadata</a></li>
+          <li><a href="#search-summary"><i class="icon-chevron-right"></i>Summary for Search Engines</a></li>
+          <li><a href="#genre"><i class="icon-chevron-right"></i>Genre</a></li>
+          <li><a href="#keywords"><i class="icon-chevron-right"></i>Keywords</a></li>
+          <li><a href="#categories"><i class="icon-chevron-right"></i>Categories</a></li>
+          <li><a href="#now"><i class="icon-chevron-right"></i> Do It Now</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+
+
+        <!-- What is Metadata
+        ================================================== -->
+        <section id="what">
+          <div class="page-header">
+            <h1>What is Metadata?</h1>
+          </div>
+          <p class="lead">Metadata makes the web work.</p>
+          <img src="http://jackatwill.com/_site/assets/img/phyllis-wise-300.jpg" class="right img-polaroid" alt="University of Illinois Chancellor Phyllis Wise speaking at a podium" />
+          <p>Imagine a picture published on a web page. The web page has no title, description, date, byline, or teaser, and the picture has no caption or photo credit. You might look at the picture and decide it’s a woman standing at a podium speaking to an audience.  You might recognize the woman as Chancellor Phyllis Wise from the University of Illinois. And you would be a leg up on the vast majority of web users who have never heard of Phyllis Wise, let alone know what she looks like.</p>
+          <p>Google, Bing, and the other search indexes would have no clue about this picture. Therefore, anyone searching for news about Phyllis Wise would not find your web page. Worse than this, Google, Bing, and the others will crawl this page and determine that WILL has a crappy website that they can’t properly index. Our <a href="http://en.wikipedia.org/wiki/PageRank">PageRank</a> goes down, which means even our best pages are ranked lower in search results.</p>
+          <p class="lead">So what kind of metadata do we need to succeed?</hp>
+          <ul>
+            <li>Title, Description, Teaser, Short Title, Caption, Byline, Entry Date, People, and most of the other fields in our Entry forms are important sources of good metadata for each Entry.</li>
+            <li>But to really make our website content maximally accessible to the search engine spiders that index the web, we need to add metadata formatted specifically for them.</li>
+          </ul>
+        </section>
+       
+        <!-- Spiders &amp; Web Crawlers
+        ================================================== -->
+        <section id="robots">
+          <div class="page-header">
+            <h2>Spiders &amp; Web Crawlers</h2>
+          </div>
+          <p class="lead">A web page is like an iceberg: when you look at it in a browser, you see only the part showing above the surface. </p> 
+          <p>A web page consists of code: HTML, CSS, and JavaScript. This code is highly structured so browsers know how to make it useful to humans.  Well-structured web pages are highly useful to the robots, spiders, and other crawlers that traverse the internet looking for content to index. When you do a search, you are searching against that index. Therefore, the more intelligible your web page is to the crawlers, the better your content turns up in searches. Since about half our website traffic comes from search, getting this right is incredibly important.</p>
+        </section>
+
+        <!-- Social Media need Metadata
+        ================================================== -->
+        <section id="social-media">
+          <div class="page-header">
+            <h2>Social Media need Metadata</h2>
+          </div>
+          <p class="lead">Facebook and other social media services also rely on metadata embedded in your web page to make sense of it. </p>
+          <p>You’ve probably noticed when you paste a URL into a Facebook status update, it pulls in a thumbnail image and a sentence or two of text from that web page. Websites enable this kind of integration with Facebook by providing metadata structured specifically for Facebook, called <a href="http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol">OpenGraph</a>.</p>
+          <p>OpenGraph metadata is embedded in the <code>&lt;head&gt;</code> section of each web page. It's part of the iceberg that sits below the water, so humans don't see it but spiders and social media sites do.</p>
+          <p>Twitter and other social media services have their own metadata needs, like  our Twitter username so they can properly associate our content with our Twitter stream. To be fully present in social media spaces, we need to include all this metadata.</p>
+          <h4>Here's what all this metadata stuff looks like to the machines crawling our website:</h4>
+          <img src="http://jackatwill.com/_site/assets/img/head-metadata.png" alt="metadata embedded in the head section of our web pages" />        </section>
+        
+        <!-- Your Role with Metadata
+        ================================================== -->        
+        <section id="role">
+          <div class="page-header">
+            <h2>Your Role with Metadata</h2>
+          </div>
+          <p class="lead">It’s the Webmaster’s job to provide well-structured web pages. It’s your job to add good metadata to fit into that structure. </p>
+          <p>When you create an Entry, you are already adding important metadata in the Title, Date, and Description. But to be most effective, you need to add still more metadata which the website user never sees, but search engines and social media applications use to make sense of our content.</p>
+          <p>These fields are all contained in our Metadata tab in the Entry form:</p>
+          <img src="http://jackatwill.com/_site/assets/img/metadata-tab.png" alt="the Metadata tab in our entry form" />
+          <p class="lead">These four Metadata fields are incredibly important:</p>
+          <ul>
+            <li><strong>Summary for Search Engines</strong>: This is a short statement that describes the entry content. We embed it in the “head” section of the web page, seen only by search engines and social media. The entry Title usually doesn’t work well here, nor does the Description. So we ask you to write a succinct but complete sentence describing the entry for this field. </li>
+            <li><strong>Genre</strong>: A simple dropdown list which tells various internet applications if this item is News, Business, Agriculture, Talk, etc. Also important for RSS feeds to things like iTunes can properly categorize our content. </li>
+            <li><strong>Keywords</strong>: Incredibly important! Make your content searchable by adding specific subject terms. </li>
+            <li><strong>Categories</strong>: This is a “controlled vocabulary” of subject terms, so we can map our content to other similar content on the web. </li>
+          </ul>
+          <p>We could spend days talking about how all this metadata plays out on the web. The important thing is that you add it thoughtfully to every content entry. It takes time, but it adds a great deal of value to your content. If you want our stuff to be found, this is how to do it.</p>
+          <p class="lead">Adding good metadata to each Entry is part of your job as a content producer.</p>
+        </section>
+
+
+        <!-- Summary for Search Engines
+        ================================================== -->
+        <section id="search-summary">
+          <div class="page-header">
+            <h2>Summary for Search Engines</h2>
+          </div>
+          <p class="lead">Write a sentence that neatly summarizes this entry.</p>
+          <p>You might assume the Title, Teaser, Short Title, or Description are enough to make sense of the Entry. And together they might, for humans. For machines, we need a neat one-sentence summary that wraps it all up. This Summary goes in the <code>&lt;head&gt;</code> section of the Entry web page, and is used by Google, Facebook, and others.</p>   
+        </section>
+        
+        <!-- Genre
+        ================================================== -->
+        <section id="genre">
+          <div class="page-header">
+            <h2>Genre</h2>
+          </div>
+          <p class="lead">Genre describes the type of production the Entry belongs to. It allows search engines to properly sort our content along with billions of other entries on the web.</p>
+          <h3>Here are the Genres we use for our content:</h3>
+          <ul>
+            <li>Agriculture</li>
+            <li>Arts &amp; Culture</li>
+            <li>Business/Financial</li>
+            <li>Children</li>
+            <li>Commentary</li>
+            <li>Community</li>
+            <li>Consumer</li>
+            <li>Documentary</li>
+            <li>Educational</li>
+            <li>Entertainment</li>
+            <li>Event</li>
+            <li>Health</li>            
+            <li>History</li>
+            <li>How-to</li>
+            <li>News</li>
+            <li>Politics</li>
+            <li>Promotion</li>
+            <li>Science</li>
+            <li>Sports</li>
+            <li>Talk</li>
+            <li>WILL</li>
+          </ul>  
+          <p>Select the most appropriate Genre from the dropdown list.</p>
+          <p class="lead">Don't over-think this: a News story about politics is still News. A Focus interview about health is still Talk.</p>         
+          <p>We use the <strong>Keywords</strong> field to specify the subjects of the News story or Focus interview, and let Genre say what type of content this is.</p>           
+        </section>        
+        
+        
+
+        <!-- Keywords
+        ================================================== -->
+        <section id="keywords">
+          <div class="page-header">
+            <h2>Keywords</h2>
+          </div>
+          <p class="lead">Keywords are words, names, and places that describe content in your Entry. They are also known as Tags. You come up with your own Keywords, and type them in one at a time in the Keywords field.</p>
+          <p>Add as many Keywords as needed for your content. A good number of Keywords is three to 10 per Entry. Type one Keyword at a time, then hit Enter. As you begin typing you will usually see suggested keywords pop up below the field:</p>
+          <img src="http://jackatwill.com/_site/assets/img/adding-keywords.png" alt="adding keywords to an entry" />
+          <p class="lead">If the Keyword you want to add is already in the system, select it from the dropdown list and hit Enter.</p>
+          <p>Note that in the case, typing "law" brings up previous keywords containing "law" including "lawn care". Also note that our list of previous keywords includes "lawn" and "lawn and garden". This happened because someone didn't notice that a Keyword close to the one they were entering already existed. There is no reason to have both "lawn" and "lawn care" as different Keywords. In fact we want to avoid this. Periodically, the Webmaster will go through our Keyword database and merge terms that mean the same thing. You can help by re-using previous Keywords if appropriate.</p>
+          <p class="lead">Keywords on our site are used by both humans and search engines.</p>
+          <ul>
+            <li>They show up as Tags on our web pages, in Tag Clouds in various places, and are used to automatically general links to Related entries.</li>
+            <li>They are embedded in our <code>&lt;head&gt;</code> metadata used by search engines.</li>
+            <li>They are also added to RSS feeds to allow our content to be correctly sorted by iTunes and other podcasting services.</li>
+          </ul>
+          <p>Keywords can include people names, place names, and short phrases or two or three words (but not sentences). They should always be lowercase, even with proper names.</p>
+        </section>
+
+        <!-- Categories
+        ================================================== -->
+        <section id="categories">
+          <div class="page-header">
+            <h2>Categories</h2>
+          </div>
+          <p class="lead">Categories are subject terms that are part of a "controlled vocabulary." Unlike Keywords, you can't add new Categories, you just pick from the existing list of subject terms.</p>
+          <p>Categories are part of a <strong>Taxonomy</strong> whereas Keywords are part of a <strong>Folksonomy</strong>. Taxonomy plus Folksonomy equals powerful stuff: they make our content findable and usable by the widest possibly range of humans and web applications.</p>
+          <p>Almost all sections of our website use the same controlled list of Category terms. This list was compiled after a great deal of research, and is based on the list of subject terms developed by the public broadcasting metadata project known as <a href="http://pbcore.org">PBCore</a>. Barring the introduction to the universe of entirely new subjects, we will not be adding to it. If you need a more specific term to describe the subject of your content, you should use the Keywords field for that.</p>
+          </section>
+          
+        <!-- Do It Now
+        ================================================== -->
+        <section id="now">
+          <div class="page-header">
+            <h2>Do It Now</h2>
+          </div>
+          <p class="lead">The only way this works is by you clicking that Metadata tab at the moment of Entry creation. No-one is going back to add metadata later. We have 30,000 Entries on our website. Add good metadata when you create a new Entry, and you make our content findable everywhere.</p> 
+          <h3>Metadata One-Page Guide for Producers</h3>
+          <p>If the above seems daunting, we have a simple one-page guide for producers covering the basics. You can download this guide, and refer to it quickly as you create content.<p>
+          <p><strong><a href="assets/documents/Metadata_One_Pager-20141203.pdf" target="_blank">Download the WILL Metadata One-Page Guide for Producers</a></strong></p>
+          </section>
+
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>Designed and built with gratitude and determination by the Illinois Public Media Department of New Media &amp; Innovation.</p>
+
+        <ul class="footer-links">
+          <li><a href="http://willtech.tumblr.com/" target="_blank">New Media &amp; Innovation Blog</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="mailto:will-web@illinois.edu?subject=website_issues">Report Issues</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="/_site//assets/js/jquery.js"></script>   
+    <script src="/_site//assets/js/bootstrap-transition.js"></script>
+    <script src="/_site//assets/js/bootstrap-dropdown.js"></script>
+    <script src="/_site//assets/js/bootstrap-scrollspy.js"></script>
+    <script src="/_site//assets/js/bootstrap-tab.js"></script>
+    <script src="/_site//assets/js/bootstrap-tooltip.js"></script>
+    <script src="/_site//assets/js/bootstrap-popover.js"></script>
+    <script src="/_site//assets/js/bootstrap-button.js"></script>
+    <script src="/_site//assets/js/bootstrap-collapse.js"></script>
+    <script src="/_site//assets/js/bootstrap-carousel.js"></script>
+    <script src="/_site//assets/js/bootstrap-typeahead.js"></script>
+    <script src="/_site//assets/js/bootstrap-affix.js"></script>
+    <script src="/_site//assets/js/holder/holder.js"></script>
+    <script src="/_site//assets/js/google-code-prettify/prettify.js"></script>
+    <script src="/_site//assets/js/application.js"></script>
+    <script src="/_site//assets/js/back-to-top.js"></script>
+   	<a href="#0" class="cd-top">Top</a>
+
+  </body>
+</html>
+
+<!-- Localized -->
