@@ -3,7 +3,7 @@ title: WILL Website Manual
 header-img: ""
 email: jackb@illinois.edu
 description: "How to use the WILL Website"
-baseurl: "/_site/"
+baseurl: "/sitemanual/"
 url: "http://jackatwill.com/_site/"
 urlimg: "http://jackatwill.com/_site/assets/img/"
 twitter_username: jackbrighton
