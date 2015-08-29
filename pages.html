@@ -34,6 +34,7 @@ description: "How to Manage WILL Pages"
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#will-pages"><i class="icon-chevron-right"></i> WILL Pages</a> 
           <li><a href="#contribute"><i class="icon-chevron-right"></i> Contribute to WILL</a></li>
+          <li><a href="#outliers"><i class="icon-chevron-right"></i> Outlier Content Sections</a></li>
         </ul>
       </div> <!-- span3 -->
       
@@ -45,7 +46,10 @@ description: "How to Manage WILL Pages"
           <div class="page-header">
             <h1>WILL Pages</h1>
           </div>
-          <p class="lead">WILL Pages are stand-alone web pages that are mostly static. They could be hand-coded but that would require any edits to be made by the Webmaster, so we're using the EE Pages Module to maintain them. There are a few <strong>very important pages</strong> with particular quirks.</p>
+          <p class="lead">The website contains many unique pages that are maintained in the channel called WILL Pages. Each entry in WILL Pages is given a Pages URI, which is different from a normal EE entry url in that it can be anything. The entry is also assigned to a specific template via the Template dropdown list. For example our About page is a WILL Page entry given the Pages URI of “/about”, and assigned to the template “pages/about”. </p>
+          <p>WILL Pages are stand-alone web pages that are mostly static. They could be hand-coded but that would require any edits to be made by the Webmaster, so we're using the EE Pages Module to maintain them. There are a few <strong>very important pages</strong> with particular quirks.</p>
+          <p>Most WILL Pages are straightforward. But there are a few fairly complicated Pages that require special care when editing. We keep the WILL Pages section fairly locked down in terms of user access for this reason.</p>
+          <p><strong>Several entries include markup that is stripped by ExpressionEngine when you reopen the entry for editing. This is actually the WYGWAM field (Description) trying to protect from malicious code being injected into the database. WYGWAM strips out key part of the markup, messing up the entire page. The solution is to edit the markup in a standard text/html editor, then paste it into the WYGWAM Description field in Source view. WYGWAM doesn’t mess up the markup on save, just upon re-opening the entry for editing.</strong></p>
       </section>
         
         <!-- Contribute to WILL
@@ -54,12 +58,306 @@ description: "How to Manage WILL Pages"
           <div class="page-header">
             <h2>Contribute to WILL</h2>
           </div>
-          <p class="lead">The most important WILL Page is the <a href="http://willpledge.org">Contribute to WILL</a> page. You'll find it in the WILL Pages section and its title is (duh) "Contribute to WILL". The Description field of this entry contains links to our currently-valid pledge forms. These forms are hosted on another server: the Allegiance Web Module server hosted at AITS. The forms themselves are created and maintained by Brenda Zimmerman in WILL's Development department. </p>
-          <p>Brenda creates new forms from time to time, and will then give you links to the new forms. You will simply edit the <em>Contribute to WILL</em> WILL Pages entry to update its links to the new forms. The for URLs are typically very long and hashy, so it's easiest to edit the source code for this entry rather than using the WYSWYG.</p> 
-          <p>Because this is a "money page," and editing source code without error is iffy at best for most staff, it's important to <strong>edit this page yourself</strong>  and don't let anyone else touch it.</p>        
-        </section>
+          <p class="lead">The most important WILL Page is the Contribute to WILL page. This has the url <a href="http://will.illinois.edu/support/pledgeform">http://will.illinois.edu/support/pledgeform</a>, and also the alias url <a href="http://willpledge.org">http://willpledge.org</a>. You'll find it in the WILL Pages section with the title of "Contribute to WILL". The Description field of this entry contains links to our pledge forms. These forms are hosted on another server: the Allegiance Web Module server. The forms themselves are created and maintained by Brenda Zimmerman in WILL's Development department. </p>
+          <p>Brenda creates new forms from time to time, and will then give the Web department links to the new forms.  Edit the <em>Contribute to WILL</em> WILL Pages entry to update its links to the new forms. The for URLs are typically very long and hashy.</p> 
+
+          <p>The "Contribute to WILL" WILL Pages entry contains Bootstrap and other markup that must be entered into the Description WYGWAM field as html. It also contains some custom classes that get stipped by WYGWAM upon opening the entry, which breaks the page design. The solution is to edit the markup outside of EE, then paste it into the entry's Description field in Source view.</p>
+          <h3>Markup for Contribute to WILL page, last updated on 8/29/2016</h3>
+          <p>Copy this core, edit as needed, and paste it into the WILL Pages entry "Contribute to WILL" in the Description field in Source view.</p>
+          <pre>                  
+<div id="contributeBoxes">
+<div class="row">
+<div class="col-xs-12 col-sm-6">    
+  <div id="sustainerbox">
+    <a href="https://webmodule.will.illinois.edu/alleg/WebModule/Donate.aspx?P=SUSTAINER2&PAGETYPE=PLG&CHECK=7xZmO7zqt1us3VDEXHYcSL1YhDw50SikSh2nq0qouhg%3d" id="sustainlink" title="Make an ongoing monthly gift">
+    <div id="sustainerouter">
+      <div id="sustainerinner">
+        <h2 class="iconheader">
+          <span id="sustainicon" class="fa fa-refresh"></span>
+        </h2>
+        <h2 class="pledgeheader">
+          Be a Sustainer
+        </h2>
+        <p class="pledgeparagraph">
+          Make an ongoing monthly gift.
+        </p>
+      </div> <!-- sustainerinner -->
+    </div> <!-- sustainerouter -->
+  </div> <!-- sustainerbox  -->
+</a>
+</div> <!-- col -->
+<div class="col-xs-12 col-sm-6">  
+  <div id="contributenowbox">
+    <a href="https://webmodule.will.illinois.edu/alleg/WebModule/Donate.aspx?P=MASTERTV&PAGETYPE=PLG&CHECK=OGsI%2f2G4N1jRyPYT4GBdDm3L5BYddGq6PVAl6UEf65g%3d" id="donationlink" title="Join or renew with a single contribution">
+    <div id="donationouter">
+      <div id="donationinner">
+        <h2 class="iconheader">
+          <span id="contributeicon" class="fa fa-check-circle-o"></span>
+        </h2>
+        <h2 class="pledgeheader">
+          One-time Gift
+        </h2>
+        <p class="pledgeparagraph">
+          Join or renew with a single contribution.
+        </p>
+      </div> <!-- donationinner -->
+    </div> <!-- donationouter -->
+  </div> <!-- contributenowbox -->
+</a>
+</div> <!-- col -->
+</div> <!-- row -->
+</div>  <!-- contributeBoxes -->
+
+<hr />
+<h3>Employer-matching doubles your gift</h3>
+
+<p><a href="http://www.uif.uillinois.edu/matching/" target="_blank" title="See a list of employers who will match your gift"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> See a list of employers who will match your gift</a></p>
+</pre>
+
+</section>
+
+        <!-- Corporate Support
+        ================================================== -->
+        <section id="contribute">
+          <div class="page-header">
+            <h2>Corporate Support</h2>
+          </div>
+          <p>This WILL Page contains complex markup including a Collapse section and html5 <audio> content including some JavaScript for the player.</p>
+          <p><em>Repeating: Don’t try to edit this in EE</em>. Paste the markup into WYGWAM in Source view and it’ll save just fine. But when you re-open the entry, WYGWAM mangles the markup. </p>
+          <p>Don’t even bother trying to edit this within the entry.</p>      
+          <h3>Markup for the <a href="http://will.illinois.edu/support/corporatesupport">Corporate Support</a> WILL page, last updated on 8/29/2016</h3>
+          <p>Copy this core, edit as needed, and paste it into the WILL Pages entry "Contribute to WILL" in the Description field in Source view.</p>
+
+<pre>
+<p>Join the organizations throughout central Illinois who have found that supporting WILL programs, educational resources and outreach is good business. This corporate underwriting or sponsorship provides valuable support to WILL while putting your company in front of some of the most educated and influential people in Illinois.</p>
+
+<p>Your underwriting message will be crafted to suit your marketing and public relations needs while complying with the FCC regulations (Section 399B) applicable to non-commercial stations. The announcement may be up to 15 seconds in length and may include some of the following elements:</p>
+
+<ul>
+  <li>Underwriter&#39;s business or organization name, or that of the subsidiary</li>
+  <li>Location of business</li>
+  <li>Business phone number/web site/e-mail address (five seconds)</li>
+  <li>A value-neutral description of the business or organization</li>
+  <li>Trade names, products or service that identify the underwriter</li>
+  <li>An established non-promotional corporate slogan</li>
+</ul>
+
+<p>Take advantage of the opportunity to connect with WILL&#39;s audiences in an uncluttered, targeted environment. To learn more about how an underwriting sponsorship can benefit your organization, please call Les Schulte at 217-333-7300.</p>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h2 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          WILL Audience Demographics
+        </a>
+      </h2>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+      <div class="">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+  <p><strong>WILL-TV viewer profile</strong></p>
+  <p>Weekly Household Cume: 83,000<br />
+  Nielsen May 2010</p>
+  <p><img alt="WILL-PBS Viewer Profile chart" src="http://will.illinois.edu/images/support/TV_Demographics-large.jpg" /></p>
+  <p><a class="pdf" href="/images/documents/TV_Demographics.pdf">Download WILL-TV Demographics report</a></p>
+  <hr>        
+        </div>
+        <div class="col-xs-12 col-sm-4">
+  <p><strong>WILL-AM listener profile</strong></p>
+  <p>Weekly cume: 24,600<br />
+  Arbitron: Fall 2009/Spring 2010</p>
+  <p><img alt="WILL-AM Listener Profile chart" src="http://will.illinois.edu/images/support/AM_Demographics-large.jpg" /></p>
+  <p><a class="pdf" href="/images/documents/AM_Demographics.pdf">Download WILL-AM Demographics report</a></p>        
+  <hr>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+  <p><strong>WILL-FM listener profile</strong></p>
+  <p>Weekly cume: 24,500<br />
+  Arbitron: Fall 2009/Spring 2010</p>
+  <p><img alt="WILL-FM Listener Profile chart" src="http://will.illinois.edu/images/support/FM_Demographics-large.jpg" /></p>
+  <p><a class="pdf" href="/images/documents/FM_Demographics.pdf">Download WILL-FM Demographics report</a></p>        
+  <hr>
+        </div>    
+      </div> <!-- row -->  
+      </div> <!-- container -->          
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h2 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Station Profiles
+        </a>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+  <h3><a href="/fm/">WILL FM 90.9/101.1 (Champaign/Urbana) 106.5 (in Danville)</a></h3>
+  <ul>
+    <li>105,000 watts, 24 hour a day classical music station featuring WILL-produced programs Classic Mornings with Vic Di Geronimo; Live and Local with Kevin Kelly; Prairie Performances</li>
+    <li>NPR programming including Morning Edition and All Things Considered; A Prairie Home Companion from American Public Media</li>
+    <li>Weekly cume listeners 24,500 (Fall 2009/Spring 2010 Arbitron-Champaign TSA, M-S 6a-Mid, persons 12+)</li>
+  </ul>
+  <h3><a href="/am/">WILL AM 580</a></h3>
+  <ul>
+    <li>5,000 watts %u2013 24 hours a day news and information station featuring WILL-produced programs Focus with David Inge; The Afternoon Magazine with Celeste Quinn; Keepin&#39; the Faith with Steve Shoemaker; and award-winning news from Illinois Public Media reporters</li>
+    <li>NPR programming including Morning Edition, All Things Considered, Car Talk and Fresh Air; BBC World Service</li>
+    <li>Weekly cume listeners 24,600 (Fall 2009/Spring 2010 Arbitron - 2013 Champaign TSA, Mon-Sun 6a-Mid, Persons 12+)</li>
+  </ul>
+  <h3><a href="/tv/">WILL TV/ PBS</a></h3>
+  <ul>
+    <li>Weekly household cume viewers 83,000 (Nielsen Index May 2010 Champaign-Springfield-Decatur)</li>
+  </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h2 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Coverage Map
+        </a>
+      </h2>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+<img alt="WILL coverage map" id="coverage_map" src="http://will.illinois.edu/images/support/NewCoverageMap.jpg" />
+<p>WILL Covers urban and rural populations throughout Illinois and Indiana.</p>
+      </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h2 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          FCC Regulations
+        </a>
+      </h2>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+  <p>The Federal Communications Commission mandates that underwriting announcements may not include:</p>
+  <ul>
+    <li>Qualitative, comparative, or promotional language</li>
+    <li>Calls to action</li>
+    <li>Pricing information and inducements to buy or sell</li>
+    <li>Language that directly or indirectly advocates particular positions or points of view on controversial issues</li>
+    <li>Music or other sounds that might be associated with an underwriter&#39;s jingle, advertisement, or products (Radio only)</li>
+    <li>Music and audio signatures used with the underwriter%u2019s name or logo may be acceptable. Theme music may be used with no singing or lyrics. WILL-TV reserves the right to determine acceptability. (TV only)</li>
+  </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h3 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Sample Radio Announcements and Spots
+        </a>
+      </h3>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body">
+  <h6>The Corkscrew Wine Emporium (Supporting WILL-AM &amp; WILL-FM since 2002):</h6>
+
+  <audio controls="controls" id="player1" preload="none" src="http://audio01.will.illinois.edu/Corkscrew.mp3" tabindex="0" type="audio/mp3"></audio>
+
+  <h6>Ratio Architects (Supporting WILL-AM&#39;s Morning Edition since 2004):</h6>
+
+  <audio controls="controls" id="player2" preload="none" src="http://audio01.will.illinois.edu/Ratio-Architects.mp3" tabindex="0" type="audio/mp3">&nbsp;</audio>
+
+  <h6>Trophy Time (Supporting WILL-AM since 2004):</h6>
+
+  <audio controls="controls" id="player3" preload="none" src="http://audio01.will.illinois.edu/Trophy-Time.mp3" tabindex="0" type="audio/mp3"></audio>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingSix">
+      <h3 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          Sample TV Announcements and Spots
+        </a>
+      </h3>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+      <div class="panel-body">
+  <h5>Country Arbors WILL Underwriting Spot</h5>
+
+<iframe allowfullscreen="" frameborder="0" height="349" mozallowfullscreen="" src="http://player.vimeo.com/video/55948448?title=0&amp;byline=0&amp;portrait=0&amp;" webkitallowfullscreen="" width="560"></iframe>
+
+  <h5>Illini Pella WILL Underwriting Spot</h5>
+
+<iframe allowfullscreen="" frameborder="0" height="349" mozallowfullscreen="" src="http://player.vimeo.com/video/55948597?title=0&amp;byline=0&amp;portrait=0&amp;" webkitallowfullscreen="" width="560"></iframe>
+
+  <h5>Kirkland Fine Arts Center WILL Underwriting Spot</h5>
+
+<iframe allowfullscreen="" frameborder="0" height="349" mozallowfullscreen="" src="http://player.vimeo.com/video/55948598?title=0&amp;byline=0&amp;portrait=0&amp;" webkitallowfullscreen="" width="560"></iframe>
+      </div>
+    </div>
+  </div>    
+</div>
+<script>
+  $('audio,video').mediaelementplayer({
+   audioWidth: 300,
+   enableAutosize: true
+  });
+</script>
+</pre>              
+
+        </section>              
+        
+     <!-- Outliers
+    ================================================== -->        
+        <section id="outliers">
+          <div class="page-header">
+            <h2>Outlier Content Sections</h2>
+          </div>
+          <p class="lead">Most content sections are very simple: a home "listing" page with summary views of multiple entries, and an "story" or "program" page for a complete view of single entries within the content section. But a few sections are more complex, and require unique design solutions.</p>
+          
+          <h3>Illinois Youth Media</h3>
+          <p>The Home page of this section uses the snippet <code>{sn_homepage_illinoisyouthmedia}</code> to create a display featuring the top three/most recent projects, and below that a grid showing all other projects. </p>
+          <p>Project pages use a snippet named <code>{sn_homepage_projects}</code> to create a project Home page.  This snippet is also used for each single entry page in the project using <code>{if}</code> statements to display conditional markup. This is either extremely clever and elegant, or more complicated than it needs to be. </p>
+          <p>With a little more development, <code>{{sn_homepage_projects}</code> might be useful for any future projects of any kind. This would require adding a variable-driven sidebar, at the very least. </p>
+          
+          <h3>Mental Health</h3>
+          <p>The template for this single-page legacy project uses <code>{sn_articles_related_entries}</code> to display related entries from arbitrary channels, and a new channel Content Collections or <code>{collections}</code> to create a single entry containing the related entries. </p>
+          <p>Important: The mentalhealth/index template contains a variable for <code>{pre_entry_id}</code>, which contains the entry_id of the Mental Health entry in the Content Collections channel. Like this: <code>{preload_replace:pre_entry_id="33111"}</code></p>
+          <p>New collections can now be created simply by:</p>
+        <ul>
+          <li>adding a new template group named for the collection’s desired segment_2</li>
+          <li>creating an entry in Content Collections with the related entries</li>
+          <li>then adding the entry_id in the template’s <code>{pre_entry_id}</code> variable</li>
+        </ul>
 
 
+          <h3>Election2014</h3>
+          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard <code>{sn_pages}</code> snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
+          <ul>
+            <li><code>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</code></li>
+            <li><code>{preload_replace:pre_tags="election-2014"}</code></li>
+            <li><code>{sn_articles_by_tag}</code></li>
+          </ul>
+          <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen). </p>
+          <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
+          <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
+          <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>     
+          
+           
+          <h3>Education Section</h3>
+          <p>The index template uses a unique {sn_homepage_education} to display a 2x2 grid of Education Blog posts sorted by tag. The Education Blog displays all blog entries, and has four sub-blogs sorted by the four main tags:</p>
+        <ul>
+          <li>Youth Made Media (url-safe tag for template is youth-made-media)</li>
+          <li>PBS Learningmedia (pbs-learningmedia)</li>
+          <li>For Teachers (for-teachers)</li>
+          <li>For Parents and Families (for-parents-and-families)</li>
+        </ul>   
+        <p><i class="icon-hand-right"></i> <em>Important: Blog authors must use these exact tags to allow posts to be correctly sorted. Adding a hyphen between any of the tag words entered conflicts with the url-safe tag, so hyphens should never be used in tags.</em></p>                                 
+        </section>          
                                           
         
       </div>

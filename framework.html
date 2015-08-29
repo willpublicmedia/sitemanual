@@ -273,10 +273,11 @@ description: "How the Site is Constructed"
             <h2>Low Variables</h2>
           </div>
           <p class="lead">Low Variables is an Addon Module that provides a different parsing order for variables, depending on how you want to use them. For example, you can set a Low Variable for parsing before Snippets, so they can process dynamic content before the Snippet is parsed.</p>
-          <p>The Low Variable {lv_edit_this} is used in this way to insert “Edit This” links in content pages if the user is logged in to EE. </p>
+          <p>The Low Variable <code>{lv_edit_this}</code> is used in this way to insert “Edit This” links in content pages if the user is logged in to EE. </p>
           <p>But Low Variables can also be used to hold static content we want to allow users to edit, like {lv_card_support} which is the fundraising message on the home page.</p>
           <p>Low Variables can use all the different field types installed in the EE instance, including WYGWAM, Related Entires, and all the rest.  We might find it useful to expand use of Low Variables, but I’ve kept it to a minimum to avoid complicating the site and adding dependencies on Addons.</p>
           <p>Documentation on the Low Variables module is available here: <a href="http://gotolow.com/addons/low-variables" target="_blank">http://gotolow.com/addons/low-variables</a></p>
+          <p><strong>Important: The Low Variable <code>{lv_edit_this}</code> contains a string of conditionals like <code>if logged_in_group == "1" OR etc</code>. This means if the person looking at the font-end web page is logged in to the CMS, and they are a member of the specified member group, they'll see a link to "Edit This" entry on the web page. So if a new member group is created, a new conditional for it must be added to this Low Variable. Because this Low Variable contains a great many conditional statements, it's very easy to misplace a character while editing. This will result in very bad things on every page of the site, so be very careful when editing this Low Variable.</strong></p>
         </section>
         
                 
@@ -332,7 +333,7 @@ description: "How the Site is Constructed"
           <h3>Outlier Pages</h3>
           <p>Several entries include markup that is stripped by ExpressionEngine when you reopen the entry for editing. This is actually the WYGWAM field (Description) trying to protect from malicious code being injected into the database. WYGWAM strips out key part of the markup, messing up the entire page. The solution is to edit the markup in a standard text/html editor, then paste it into the WYGWAM Description field in Source view. WYGWAM doesn’t mess up the markup on save, just upon re-opening the entry for editing.</p>
           <p><em>Contribute to WILL</em></p>
-          <p>This has the url http://will.illinois.edu/support/pledgeform, and also the alias url http://willpledge.org.  The WILL Pages entry contains Bootstrap and other markup that must be entered into the Description WYGWAM field as html. </p>
+          <p>This has the url <a href="http://will.illinois.edu/support/pledgeform">http://will.illinois.edu/support/pledgeform</a>, and also the alias url <a href="http://willpledge.org">http://willpledge.org</a>.  The WILL Pages entry contains Bootstrap and other markup that must be entered into the Description WYGWAM field as html. </p>
           <p><em>Corporate Support</em></p>
           <p>This WILL Page contains complex markup including a Collapse section and html5 <audio> content.</p>
           <p><em>Repeating: Don’t try to edit these in EE</em></p>
@@ -348,31 +349,31 @@ description: "How the Site is Constructed"
           <p class="lead">Most content sections are very simple: a home "listing" page with summary views of multiple entries, and an "story" or "program" page for a complete view of single entries within the content section. But a few sections are more complex, and require unique design solutions.</p>
           
           <h3>Illinois Youth Media</h3>
-          <p>The Home page of this section uses the snippet {sn_homepage_illinoisyouthmedia} to create a display featuring the top three/most recent projects, and below that a grid showing all other projects. </p>
-          <p>Project pages use a snippet named {sn_homepage_projects} to create a project Home page.  This snippet is also used for each single entry page in the project using {if} statements to display conditional markup. This is either extremely clever and elegant, or more complicated than I would like, I can’t decide which. </p>
-          <p>With a little more development, {sn_homepage_projects} might be useful for any future projects of any kind. This would require adding a variable-driven sidebar, at the very least. </p>
+          <p>The Home page of this section uses the snippet <code>{sn_homepage_illinoisyouthmedia}</code> to create a display featuring the top three/most recent projects, and below that a grid showing all other projects. </p>
+          <p>Project pages use a snippet named <code>{sn_homepage_projects}</code> to create a project Home page.  This snippet is also used for each single entry page in the project using <code>{if}</code> statements to display conditional markup. This is either extremely clever and elegant, or more complicated than it needs to be. </p>
+          <p>With a little more development, <code>{{sn_homepage_projects}</code> might be useful for any future projects of any kind. This would require adding a variable-driven sidebar, at the very least. </p>
           
           <h3>Mental Health</h3>
-          <p>The template for this single-page legacy project uses {sn_articles_related_entries} to display related entries from arbitrary channels, and a new channel Content Collections or {collections} to create a single entry containing the related entries. </p>
-          <p>Important: The mentalhealth/index template contains a variable for {pre_entry_id}, which contains the entry_id of the Mental Health entry in the Content Collections channel. Like this: {preload_replace:pre_entry_id="33111"}</p>
+          <p>The template for this single-page legacy project uses <code>{sn_articles_related_entries}</code> to display related entries from arbitrary channels, and a new channel Content Collections or <code>{collections}</code> to create a single entry containing the related entries. </p>
+          <p>Important: The mentalhealth/index template contains a variable for <code>{pre_entry_id}</code>, which contains the entry_id of the Mental Health entry in the Content Collections channel. Like this: <code>{preload_replace:pre_entry_id="33111"}</code></p>
           <p>New collections can now be created simply by:</p>
         <ul>
           <li>adding a new template group named for the collection’s desired segment_2</li>
           <li>creating an entry in Content Collections with the related entries</li>
-          <li>then adding the entry_id in the template’s {pre_entry_id} variable</li>
+          <li>then adding the entry_id in the template’s <code>{pre_entry_id}</code> variable</li>
         </ul>
 
 
           <h3>Election2014</h3>
-          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard {sn_pages} snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
+          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard <code>{sn_pages}</code> snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
           <ul>
-            <li>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</li>
-            <li>{preload_replace:pre_tags="election-2014"}</li>
-            <li>{sn_articles_by_tag}</li>
+            <li><code>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</code></li>
+            <li><code>{preload_replace:pre_tags="election-2014"}</code></li>
+            <li><code>{sn_articles_by_tag}</code></li>
           </ul>
           <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen). </p>
-          <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: {preload_replace:pre_tags="illinois-governor-2014"}</p>
-          <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the {pre_channel} variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
+          <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
+          <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
           <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>     
           
            
