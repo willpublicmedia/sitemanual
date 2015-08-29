@@ -234,13 +234,15 @@ description: "How the Site is Constructed"
           <p class="lead">Embedded templates are used in most pages, providing sidebars and other secondary content. Conditional logic is used in many snippets to determine which embedded template is used. </p>
           <p>For example in the {sn_homepage} snippet, different sidebars are displayed depending on what’s in segment_1 of the url. So <em>http://will.illinois.edu/tv</em> gets a sidebar based on the template <em>embeds/_embed_sidebar_tv</em>, while <em>http://will.illinois.edu/am</em> gets the sidebar for WILL-AM which is <em>embeds/_embed_sidebar_am</em>. This kind of logic is used in many snippets. </p>
 
-          <p>Because Embeds are processed later in the EE parse order, when they are embedded in Snippet it’s necessary to pass pre-defined variable to them from the Snippet. For example:</p>
+          <p>Because Embeds are processed later in the EE parse order, when they are embedded in a Snippet it’s necessary to pass pre-defined variables to them from the Snippet. For example:</p>
         <ul>
-          <li>The template site/index defines a variable of {pre_highlights_categories} and assigns it a value of “66”. </li>
-          <li>The Snippet {sn_homepage} converts the {pre_highlights_categories} variable instantly to “66” wherever it appears in the Snippet. </li>
+          <li>The template site/index defines a variable of <code>{pre_highlights_categories}</code> and assigns it a value of “66”. </li>
+          <li>The Snippet <code>{sn_homepage}</code> converts the <code>{pre_highlights_categories}</code> variable instantly to “66” wherever it appears in the Snippet. </li>
           <li>Since the Embed is processed after the Snippet has converted it to “66” we can’t pass on {pre_highlights_categories} to the Embed.</li>
-          <li>Since the Embed is processed after the Snippet has converted it to “66” we can’t pass on {pre_highlights_categories} to the Embed.</li>
-          <li>Inside the Embed, the exp:channel:entries tag can then use embed_highlights_categories to declare categories=”{embed_highlights_categories}”, which the Embed sees as the value “66” we passed from the Snippet.</li>
+          <li>We can however, in the Snippet, use <code>{pre_hightlights_categories}</code> to pass the value of "66" to an Embed variable, which we also define in the Snippet by saying something like: 
+          <pre>{embed="{pre_sidebar_template}" embed_channels="{pre_channel}" embed_path_root="{channel_url}" embed_pre_section_template="{pre_section_template}" embed_highlights_category="{pre_highlights_categories}"}</pre>
+          </li>
+          <li>Inside the Embed, the exp:channel:entries tag can then use embed_highlights_categories to declare <code>categories=”{embed_highlights_categories}”</code> which the Embed sees as the value “66” we passed from the Snippet.</li>
         </ul>        
         <h3>Embeds examples</h3>
         <ul>
