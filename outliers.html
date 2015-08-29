@@ -1,5 +1,5 @@
 ---
-title: "Outlier Sections"
+title: "Outlier Website Sections"
 description: "Unusual website sections that need special attention"
 ---
 
@@ -32,8 +32,12 @@ description: "Unusual website sections that need special attention"
     <div class="row">
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
-\
           <li><a href="#outliers"><i class="icon-chevron-right"></i> Outlier Content Sections</a></li>
+          <li><a href="#education"><i class="icon-chevron-right"></i> Education/a></li>
+          <li><a href="#youthmedia"><i class="icon-chevron-right"></i> Illinois Youth Media</a></li>
+          <li><a href="#mentalhealth"><i class="icon-chevron-right"></i> Mental Health Special Series</a></li>
+          <li><a href="#irr"><i class="icon-chevron-right"></i> Illinois Radio Reader</a></li>
+          <li><a href="#election2014"><i class="icon-chevron-right"></i> Election 2014</a></li>
         </ul>
       </div> <!-- span3 -->
       
@@ -48,6 +52,23 @@ description: "Unusual website sections that need special attention"
           </div>
           <p class="lead">Most content sections are very simple: a home "listing" page with summary views of multiple entries, and an "story" or "program" page for a complete view of single entries within the content section. But a few sections are more complex, and require unique design solutions.</p>
         </section>  
+
+
+     <!-- Education Section
+    ================================================== -->        
+        <section id="education">
+          <div class="page-header">
+            <h2>Education Section</h2>
+          </div>            
+          <p>The index template uses a unique <code>{sn_homepage_education}</code> to display a 2x2 grid of Education Blog posts sorted by tag. The Education Blog displays all blog entries, and has four sub-blogs sorted by the four main tags:</p>
+        <ul>
+          <li>Youth Made Media (url-safe tag for template is youth-made-media)</li>
+          <li>PBS Learningmedia (pbs-learningmedia)</li>
+          <li>For Teachers (for-teachers)</li>
+          <li>For Parents and Families (for-parents-and-families)</li>
+        </ul>   
+        <p><i class="icon-hand-right"></i> <em>Important: Blog authors must use these exact tags to allow posts to be correctly sorted. Adding a hyphen between any of the tag words entered conflicts with the url-safe tag, so hyphens should never be used in tags.</em></p>                                 
+        </section>         
 
      <!-- Illinois Youth Media
     ================================================== -->        
@@ -77,16 +98,24 @@ description: "Unusual website sections that need special attention"
           <li>then adding the entry_id in the template’s <code>{pre_entry_id}</code> variable</li>
         </ul>
         </section>
-        
+
+     <!-- Illinois Radio Reader
+    ================================================== -->        
+        <section id="irr">
+          <div class="page-header">
+            <h2>Illinois Radio Reader</h2>
+          </div> 
+          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard <code>{sn_pages}</code> snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
+
+
+        </section>
+
      <!-- Election2014
     ================================================== -->        
-        <section id="mentalhealth">
+        <section id="election2014">
           <div class="page-header">
             <h2>Election2014</h2>
           </div> 
-
-          <h3>Election2014</h3>
-          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard <code>{sn_pages}</code> snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
           <ul>
             <li><code>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</code></li>
             <li><code>{preload_replace:pre_tags="election-2014"}</code></li>
@@ -95,19 +124,9 @@ description: "Unusual website sections that need special attention"
           <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen). </p>
           <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
           <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
-          <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>     
-          
-           
-          <h3>Education Section</h3>
-          <p>The index template uses a unique {sn_homepage_education} to display a 2x2 grid of Education Blog posts sorted by tag. The Education Blog displays all blog entries, and has four sub-blogs sorted by the four main tags:</p>
-        <ul>
-          <li>Youth Made Media (url-safe tag for template is youth-made-media)</li>
-          <li>PBS Learningmedia (pbs-learningmedia)</li>
-          <li>For Teachers (for-teachers)</li>
-          <li>For Parents and Families (for-parents-and-families)</li>
-        </ul>   
-        <p><i class="icon-hand-right"></i> <em>Important: Blog authors must use these exact tags to allow posts to be correctly sorted. Adding a hyphen between any of the tag words entered conflicts with the url-safe tag, so hyphens should never be used in tags.</em></p>                                 
-        </section>          
+          <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>  
+        </section>  
+        
                                           
         
       </div>
