@@ -207,6 +207,38 @@
 
 <p>By pre-defining many variables in the Templates, we can re-use the same Snippets to generate pages and feeds for the vast majority of the site.</p> 
 
+<h4>Example: new/index template</h4>
+
+<code>
+{preload_replace:pre_title="News"}
+{preload_replace:pre_channel="features|news|newsnational"}
+{preload_replace:pre_logo="IPM_Logo_Main.png"}
+{preload_replace:pre_description="In-depth reporting from WILL, NPR, and other sources"}
+{preload_replace:pre_keywords="News, Public Affairs, WILL, Illinois Public Media, Radio, Public Radio, University of Illinois, Illinois, NPR"}
+{preload_replace:pre_limit="10"}
+{preload_replace:pre_show_future="no"}
+{preload_replace:pre_show_expired="no"}
+{preload_replace:pre_highlights_categories="72"}
+{preload_replace:pre_section_template="news"}
+{preload_replace:pre_tag_channel_template="news"}
+{preload_replace:pre_sidebar_template="embeds/_embed_sidebar_news"}
+{preload_replace:pre_channel_item_name="Stories"}
+{preload_replace:pre_channel_description_entry_id="19028"}
+{preload_replace:pre_offset="3"}
+{preload_replace:pre_entry_order="date"}
+{preload_replace:pre_entry_sort="desc"}
+{preload_replace:pre_player_template="/player/audio"}
+{preload_replace:pre_disable="member_data|categories"}
+{preload_replace:pre_mp3_download="yes"}
+{preload_replace:pre_rss_feed="yes"}
+{preload_replace:pre_show_tags="yes"}
+{preload_replace:pre_show_date="yes"}
+{preload_replace:pre_show_video="no"}
+{preload_replace:pre_show_sharelink="yes"}
+{preload_replace:pre_show_commentlink="yes"}
+{sn_articles}
+</code>
+
         <h3>ExpressionEngine’s Parse Order</h3>
         <p>Templates, Snippets, and the other elements are parsed by EE in a specific order. It’s important to understand parse order to follow the logic of page generation. Templates define variables, then pass them to Snippets. Snippets contain Embedded Templates, Global Variables, and Low Variables. Each of these elements is parsed by EE in a specific sequence.  Here’s a handy guide to EE Parse Order:</p>
 

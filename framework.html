@@ -130,7 +130,7 @@ description: "How the Site is Constructed"
 
 <h4>Example: new/index template</h4>
 
-<samp>
+<pre>
 {preload_replace:pre_title="News"}
 {preload_replace:pre_channel="features|news|newsnational"}
 {preload_replace:pre_logo="IPM_Logo_Main.png"}
@@ -158,7 +158,7 @@ description: "How the Site is Constructed"
 {preload_replace:pre_show_sharelink="yes"}
 {preload_replace:pre_show_commentlink="yes"}
 {sn_articles}
-</samp>
+</pre>
 
 <p>As you can see there are many defined variables being passed to the snippets. The most important pieces of this are the variable <code>{pre_channel}</code>, which defines the channel or channels being passed to the snippet, and the last line <code>{sn_articles}</code> which defines which snippet all this is passed to.</p>
 
