@@ -1,0 +1,123 @@
+---
+title: "Outlier Sections"
+description: "Unusual website sections that need special attention"
+---
+
+<!DOCTYPE html>
+ {% include head.html %}
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+ {% include nav.html %}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>WILL Website Manual for Site Administrators</h1>
+    <p class="lead">Unusual website sections that need special attention</p>
+
+    <div id="carbonads-container">
+      <div class="carbonad">
+        <img src="{{ site.urlimg }}CP-Home-ExpressionEngine.png" />
+      </div>
+    </div>    
+</header>
+
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+\
+          <li><a href="#outliers"><i class="icon-chevron-right"></i> Outlier Content Sections</a></li>
+        </ul>
+      </div> <!-- span3 -->
+      
+      <div class="span9">
+          
+        
+     <!-- Outliers
+    ================================================== -->        
+        <section id="outliers">
+          <div class="page-header">
+            <h2>Outlier Content Sections</h2>
+          </div>
+          <p class="lead">Most content sections are very simple: a home "listing" page with summary views of multiple entries, and an "story" or "program" page for a complete view of single entries within the content section. But a few sections are more complex, and require unique design solutions.</p>
+        </section>  
+
+     <!-- Illinois Youth Media
+    ================================================== -->        
+        <section id="youthmedia">
+          <div class="page-header">
+            <h2>Illinois Youth Media</h2>
+          </div>   
+          <p>The Home page of this section uses the snippet <code>{sn_homepage_illinoisyouthmedia}</code> to create a display featuring the top three/most recent projects, and below that a grid showing all other projects. </p>
+          <p>Project pages use a snippet named <code>{sn_homepage_projects}</code> to create a project Home page.  This snippet is also used for each single entry page in the project using <code>{if}</code> statements to display conditional markup. This is either extremely clever and elegant, or more complicated than it needs to be. </p>
+          <p>With a little more development, <code>{sn_homepage_projects}</code> might be useful for any future projects of any kind. This would require adding a variable-driven sidebar, at the very least. </p>
+          </section>
+
+
+     <!-- Mental Health
+    ================================================== -->        
+        <section id="mentalhealth">
+          <div class="page-header">
+            <h2>Mental Health</h2>
+          </div> 
+
+          <p>The template for this single-page legacy project uses <code>{sn_articles_related_entries}</code> to display related entries from arbitrary channels, and a new channel Content Collections or <code>{collections}</code> to create a single entry containing the related entries. </p>
+          <p>Important: The mentalhealth/index template contains a variable for <code>{pre_entry_id}</code>, which contains the entry_id of the Mental Health entry in the Content Collections channel. Like this: <code>{preload_replace:pre_entry_id="33111"}</code></p>
+          <p>New collections can now be created simply by:</p>
+        <ul>
+          <li>adding a new template group named for the collection’s desired segment_2</li>
+          <li>creating an entry in Content Collections with the related entries</li>
+          <li>then adding the entry_id in the template’s <code>{pre_entry_id}</code> variable</li>
+        </ul>
+        </section>
+        
+     <!-- Election2014
+    ================================================== -->        
+        <section id="mentalhealth">
+          <div class="page-header">
+            <h2>Election2014</h2>
+          </div> 
+
+          <h3>Election2014</h3>
+          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard <code>{sn_pages}</code> snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
+          <ul>
+            <li><code>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</code></li>
+            <li><code>{preload_replace:pre_tags="election-2014"}</code></li>
+            <li><code>{sn_articles_by_tag}</code></li>
+          </ul>
+          <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen). </p>
+          <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
+          <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
+          <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>     
+          
+           
+          <h3>Education Section</h3>
+          <p>The index template uses a unique {sn_homepage_education} to display a 2x2 grid of Education Blog posts sorted by tag. The Education Blog displays all blog entries, and has four sub-blogs sorted by the four main tags:</p>
+        <ul>
+          <li>Youth Made Media (url-safe tag for template is youth-made-media)</li>
+          <li>PBS Learningmedia (pbs-learningmedia)</li>
+          <li>For Teachers (for-teachers)</li>
+          <li>For Parents and Families (for-parents-and-families)</li>
+        </ul>   
+        <p><i class="icon-hand-right"></i> <em>Important: Blog authors must use these exact tags to allow posts to be correctly sorted. Adding a hyphen between any of the tag words entered conflicts with the url-safe tag, so hyphens should never be used in tags.</em></p>                                 
+        </section>          
+                                          
+        
+      </div>
+    </div>
+
+  </div>
+
+{% include footer.html %}
+
+  </body>
+</html>
+
+<!-- Localized -->
