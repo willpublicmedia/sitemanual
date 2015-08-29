@@ -43,10 +43,7 @@ description: "How the Site is Constructed"
           <li><a href="#gv"><i class="icon-chevron-right"></i> Global Variables</a></li>
           <li><a href="#lowvariables"><i class="icon-chevron-right"></i> Low Variables</a></li>
           <li><a href="#statictemplates"><i class="icon-chevron-right"></i> Static Templates</a></li>
-          <li><a href="#audioplayers"><i class="icon-chevron-right"></i> Audioplayers</a></li>          
-          <li><a href="#pages"><i class="icon-chevron-right"></i> Pages</a></li>
-          <li><a href="#outliers"><i class="icon-chevron-right"></i> Outlier Content Sections</a></li>         
-
+          <li><a href="#audioplayers"><i class="icon-chevron-right"></i> Audioplayers</a></li>         
         </ul>
       </div> <!-- span3 -->
       
@@ -321,72 +318,7 @@ description: "How the Site is Constructed"
           
         </section>    
         
-     <!-- Pages
-    ================================================== -->        
-        <section id="pages">
-          <div class="page-header">
-            <h2>Pages</h2>
-          </div>
-          <p class="lead">The website contains many unique pages that are maintained in the section named WILL Pages. Each entry in WILL Pages is given a Pages URI, which is different from a normal EE entry url in that it can be anything. The entry is also assigned to a specific template via the Template dropdown list. For example our About page is a WILL Page entry given the Pages URI of “/about”, and assigned to the template “pages/about”. </p>
-          <p>Most WILL Pages are straightforward, and contain content that doesn’t often change. But there are a few fairly complicated Pages that require special care when editing. We keep the WILL Pages section fairly locked down in terms of user access for this reason.</p>
-          
-          <h3>Outlier Pages</h3>
-          <p>Several entries include markup that is stripped by ExpressionEngine when you reopen the entry for editing. This is actually the WYGWAM field (Description) trying to protect from malicious code being injected into the database. WYGWAM strips out key part of the markup, messing up the entire page. The solution is to edit the markup in a standard text/html editor, then paste it into the WYGWAM Description field in Source view. WYGWAM doesn’t mess up the markup on save, just upon re-opening the entry for editing.</p>
-          <p><em>Contribute to WILL</em></p>
-          <p>This has the url <a href="http://will.illinois.edu/support/pledgeform">http://will.illinois.edu/support/pledgeform</a>, and also the alias url <a href="http://willpledge.org">http://willpledge.org</a>.  The WILL Pages entry contains Bootstrap and other markup that must be entered into the Description WYGWAM field as html. </p>
-          <p><em>Corporate Support</em></p>
-          <p>This WILL Page contains complex markup including a Collapse section and html5 <audio> content.</p>
-          <p><em>Repeating: Don’t try to edit these in EE</em></p>
-          <p>The above a few other entries contain complicated markup best maintained outside of EE.  You can paste the markup into WYGWAM in Source view and it’ll save just fine. But when you re-open the entry, WYGWAM mangles the markup. Don’t even bother trying to edit this within the entry. Maintain the markup for the entry outside of EE, and paste it in the entry as changes are needed.</p>                    
-        </section>              
-        
-     <!-- Outliers
-    ================================================== -->        
-        <section id="outliers">
-          <div class="page-header">
-            <h2>Outlier Content Sections</h2>
-          </div>
-          <p class="lead">Most content sections are very simple: a home "listing" page with summary views of multiple entries, and an "story" or "program" page for a complete view of single entries within the content section. But a few sections are more complex, and require unique design solutions.</p>
-          
-          <h3>Illinois Youth Media</h3>
-          <p>The Home page of this section uses the snippet <code>{sn_homepage_illinoisyouthmedia}</code> to create a display featuring the top three/most recent projects, and below that a grid showing all other projects. </p>
-          <p>Project pages use a snippet named <code>{sn_homepage_projects}</code> to create a project Home page.  This snippet is also used for each single entry page in the project using <code>{if}</code> statements to display conditional markup. This is either extremely clever and elegant, or more complicated than it needs to be. </p>
-          <p>With a little more development, <code>{{sn_homepage_projects}</code> might be useful for any future projects of any kind. This would require adding a variable-driven sidebar, at the very least. </p>
-          
-          <h3>Mental Health</h3>
-          <p>The template for this single-page legacy project uses <code>{sn_articles_related_entries}</code> to display related entries from arbitrary channels, and a new channel Content Collections or <code>{collections}</code> to create a single entry containing the related entries. </p>
-          <p>Important: The mentalhealth/index template contains a variable for <code>{pre_entry_id}</code>, which contains the entry_id of the Mental Health entry in the Content Collections channel. Like this: <code>{preload_replace:pre_entry_id="33111"}</code></p>
-          <p>New collections can now be created simply by:</p>
-        <ul>
-          <li>adding a new template group named for the collection’s desired segment_2</li>
-          <li>creating an entry in Content Collections with the related entries</li>
-          <li>then adding the entry_id in the template’s <code>{pre_entry_id}</code> variable</li>
-        </ul>
-
-
-          <h3>Election2014</h3>
-          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard <code>{sn_pages}</code> snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
-          <ul>
-            <li><code>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</code></li>
-            <li><code>{preload_replace:pre_tags="election-2014"}</code></li>
-            <li><code>{sn_articles_by_tag}</code></li>
-          </ul>
-          <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen). </p>
-          <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
-          <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
-          <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>     
-          
-           
-          <h3>Education Section</h3>
-          <p>The index template uses a unique {sn_homepage_education} to display a 2x2 grid of Education Blog posts sorted by tag. The Education Blog displays all blog entries, and has four sub-blogs sorted by the four main tags:</p>
-        <ul>
-          <li>Youth Made Media (url-safe tag for template is youth-made-media)</li>
-          <li>PBS Learningmedia (pbs-learningmedia)</li>
-          <li>For Teachers (for-teachers)</li>
-          <li>For Parents and Families (for-parents-and-families)</li>
-        </ul>   
-        <p><i class="icon-hand-right"></i> <em>Important: Blog authors must use these exact tags to allow posts to be correctly sorted. Adding a hyphen between any of the tag words entered conflicts with the url-safe tag, so hyphens should never be used in tags.</em></p>                                 
-        </section>          
+     
       </div>
     </div>
   </div>
