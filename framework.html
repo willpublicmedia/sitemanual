@@ -160,6 +160,19 @@ description: "How the Site is Constructed"
 {sn_articles}
 </samp>
 
+<p>As you can see there are many defined variables being passed to the snippets. The most important pieces of this are the variable <code>{pre_channel}</code>, which defines the channel or channels being passed to the snippet, and the last line <code>{sn_articles}</code> which defines which snippet all this is passed to.</p>
+
+<p>If you study the snippet, most of the rest are fairly obvious. For example <code>{pre_logo}</code> defines which image file to use in the header for the logo. <code>{pre_description}</code> and <code>{pre_keywords}</code> supply values for the meta tags in the <code><head></code> section.</p>
+
+<h4>Less obvious variables</h4>
+<ul>
+  <li>The <code>{pre_highlights_categories}</code> variable contains the Entry ID number of an entry in Channel Descriptions. So "19028" is the entry_id for the entry "Illinois Public Media News" in the Channel Desciptions channel. </li>
+  <li><code>{pre_tag_channel_template}</code> is a variable passed to template in the "tags" template group. Any time you see a tag cloud, or a page using the "tags" template, this variable is important for connecting things.</li>
+  <li><code>{pre_offset}</code> is used as a conditional value for <code>{sn_articles}</code>. If the value is "3" then three stories will appear at the top of the web page as seen on the News home page: <a href="http://will.illinois.edu/news/">http://will.illinois.edu/news/</a>. If the value is not "3" the the stories will simply flow down the page like most sections do. As seen on the News home page, this allows more than one story to appear above the fold. (The value of this is increasingly dubious with the acsendance of mobile, but for now that's how we're laying this out.)</li>
+  <li>Most of the remaining <code>{preloud_replace}</code> variables are switches used in conditionals in the snippets. You can figure them out pretty easily by reading the snippet code. There are a few deprecated variable, like <code>{pre_show_commentlink}</code> which was used to enable or disable commenting for a given channel template. But since then we disabled commenting for the entire site, so this variable doesn't currently do anything. Similarly you might find other variables that don't do anything, which is something to clean up during the next iteration of the site.</li>
+  </ul>
+
+
         <h3>ExpressionEngine’s Parse Order</h3>
         <p>Templates, Snippets, and the other elements are parsed by EE in a specific order. It’s important to understand parse order to follow the logic of page generation. Templates define variables, then pass them to Snippets. Snippets contain Embedded Templates, Global Variables, and Low Variables. Each of these elements is parsed by EE in a specific sequence.  Here’s a handy guide to EE Parse Order:</p>
 
