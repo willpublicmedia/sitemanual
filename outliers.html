@@ -89,7 +89,7 @@ description: "Unusual website sections that need special attention"
             <h2>Mental Health</h2>
           </div> 
 
-          <p>The template for this single-page legacy project uses <code>{sn_articles_related_entries}</code> to display related entries from arbitrary channels, and a new channel Content Collections or <code>{collections}</code> to create a single entry containing the related entries. </p>
+          <p>The template for this <a href="http://will.illinois.edu/mentalhealth">single-page legacy project</a> uses <code>{sn_articles_related_entries}</code> to display related entries from arbitrary channels, and a new channel Content Collections or <code>{collections}</code> to create a single entry containing the related entries. </p>
           <p>Important: The mentalhealth/index template contains a variable for <code>{pre_entry_id}</code>, which contains the entry_id of the Mental Health entry in the Content Collections channel. Like this: <code>{preload_replace:pre_entry_id="33111"}</code></p>
           <p>New collections can now be created simply by:</p>
         <ul>
@@ -105,8 +105,8 @@ description: "Unusual website sections that need special attention"
           <div class="page-header">
             <h2>Illinois Radio Reader</h2>
           </div> 
-          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard <code>{sn_pages}</code> snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
-
+          <p>This section consists of two main web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard <code>{sn_pages}</code> snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
+          <p>Recently added are four "podcast" pages containing a weeks worth of IRR archives of readings from four area newspapers. The Director of the IRR manages this content.</p>
 
         </section>
 
@@ -116,15 +116,18 @@ description: "Unusual website sections that need special attention"
           <div class="page-header">
             <h2>Election 2014</h2>
           </div> 
+          <p class="lead">We built a new kind of Election News page for the 2014 elections, which could provide a great template for 2016 etc and maybe other content projects.</p>
+          <p>The idea is to use the Tagger module to display content from several channels. In the election2014 template group, the index page contains the following (plus other stuff but these are the key):</p>
           <ul>
             <li><code>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</code></li>
             <li><code>{preload_replace:pre_tags="election-2014"}</code></li>
             <li><code>{sn_articles_by_tag}</code></li>
           </ul>
-          <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen). </p>
+          <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen - the Tagger module adds hyphens between words, and the resulting string becomes the "uri safe tagname"). </p>
           <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
           <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
           <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>  
+          <p>The right sidebar of the Election 2014 templates also contains a feed pulling from the NPR Story API. In this case it's a feed of election stories but the API call can be changed to any other topic. We used the NPR API to pull stories on Mental Health and display them on <a href="http://will.illinois.edu/mentalhealth">WILL's Mental Health project page</a>. 
         </section>  
         
                                           
