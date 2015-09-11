@@ -3,6 +3,7 @@ title: WILL Website Manual
 header-img: ""
 description: "How to use the WILL Website"
 baseurl: "/sitemanual/"
+urlimg: "assets/img/"
 
 # Build settings
 markdown: kramdown
