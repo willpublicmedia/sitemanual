@@ -1,6 +1,6 @@
 ---
-title: "The CMS Framework"
-description: "How the Site is Constructed"
+title: "Guide for Site Managers"
+description: "How the Site Manual works"
 ---
 
 <!DOCTYPE html>
@@ -14,8 +14,8 @@ description: "How the Site is Constructed"
 ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
-    <h1>The CMS Framework</h1>
-    <p class="lead">How the Site is Constructed</p>
+    <h1>Guide for Site Managers</h1>
+    <p class="lead">How the Site Manual works</p>
 
     <div id="carbonads-container">
       <div class="carbonad">
@@ -74,22 +74,29 @@ description: "How the Site is Constructed"
           <p> Finally, since the Master branch doesn't actually serve the sitemanual we need to do this: <code>git push origin master:gh-pages</code>. That pushes the changes made to the Master branch to the gh-pages branch which serves the actual pages.</p>
         </section>
 
-    <!-- Sitemanual Design<
+    <!-- Sitemanual Design
     ================================================== -->        
-        <section id="site-components">
+        <section id="design">
           <div class="page-header">
             <h2>Sitemanual Design</h2>
           </div>
-          <p class="lead">Every CMS-driven website consists of a bundle of things, like a file system, a database, scripts, and possibly a framework. Here's what we're using:</p>
+          <h3>Pages</h3>
+          <p>All pages are your basic html files. Edit existing pages or create new pages using whatever tool you like. Each page contains three simple includes.</p>
+          <h3>Includes</h3>
+          <p>This is one of the great things about using Jekyll: You can use includes inside static html pages without running any scripting language like PHP.</p>
+          <p>The includes in each page are:</p>
           <ul>
-            <li>ExpressionEngine CMS, running on a LAMP stack inside a virtual machine. Everything from the VM on up to the CMS is managed by Taylor Judd, our Internet Technology Specialist/SysAdmin.</li>
-            <li>the Bootstrap framework, mentioned above. The core Bootstrap files are in the <code>/themes/site_themes/will2.1</code> folder on the server. These files include all the Bootstrap JavaScript, the never-edit-these Bootstrap stylesheets, an images folder containing theme images, and a plugins folder for additional JS and CSS files. You'll also find a 'weather' folder here which contains custom JS and CSS files for the /weather page.</li>
-            <li>Overrides of default Boostrap styles, and custom styles defined for the WILL 2.1 site, are contained in the file custom.css.</li>
-            <li>We're using MediaElement.js for our audio players. All the files for this are in <code>/themes/site_themes/mediaelement</code>.</li>
-            <li>The folder <code>/will2.1/plugins/weather</code> contains the JavaScript used on the weather/index page. Inside this folder, the images folder contains a set of weather icons used by the Yahoo Weather plugin that generates the weather icon seen in the header of every page.</li>
-            <li>All the EE addon files are contained in <code>/ipmsys/expressionengine/third_party</code>, and <code>/themes/third_party</code>, the default location for EE addons.</li>
-            <li>We also set up a very important folder for uploading files through EE Entry forms: <code>/nfs</code> contains a large number of mp3 audio files, plus PDF documents and other allowed filetypes uploaded with entries for use on the site. The NFS share is mapped from the web server, and <strong>is not part of the standard EE install</strong>.</li>
-          </ul>         
+            <li><code>include head.html</code></li>
+            <li><code>include nav.html</code></li>
+            <li><code>include footer.html</code></li>
+          </ul>        
+          <p>All includes are contained in the folder _includes. Just open the file to see where they fit.</p>
+          <h3>Top Navigation</h3>
+          <p>The top navigation is contained in the nav.html. If adding a new page, make sure to add a link to it in the nav.</p>
+          <h3>Side Navigation</h3>
+          <p>In-page navigation is contained in a sidebar which also enables sharing of links to specific sections. Each page has its own unique side navigation since its content is unique to that page. When adding a new section to any page, add a link to it in the side navigation.</p>
+          <h3>_config.yml</h3>
+          <p>This file contains some important variables used by Jekyll. This should never need to be edited, it's just there.</p>
         </section>  
         
       

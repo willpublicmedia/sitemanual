@@ -1,14 +1,8 @@
 # Site settings
 title: WILL Website Manual
 header-img: ""
-email: jackb@illinois.edu
 description: "How to use the WILL Website"
 baseurl: "/sitemanual/"
-url: "http://jackatwill.com/_site/"
-urlimg: "http://jackatwill.com/_site/assets/img/"
-twitter_username: jackbrighton
-github_username:  jackbrighton
-facebook_username:  jackbrighton
 
 # Build settings
 markdown: kramdown
