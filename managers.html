@@ -32,19 +32,9 @@ description: "How the Site is Constructed"
     <div class="row">
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
-          <li><a href="#ee-cms"><i class="icon-chevron-right"></i> ExpressionEngine CMS</a></li>
-          <li><a href="#bootstrap"><i class="icon-chevron-right"></i> Boostrap framework</a></li>
-          <li><a href="#site-components"><i class="icon-chevron-right"></i> Site Components</a></li>
-          <li><a href="#field-group"><i class="icon-chevron-right"></i> One Field Group to Rule Them All</a></li>
-          <li><a href="#templates"><i class="icon-chevron-right"></i> Template &amp; Content Structure</a></li>
-          <li><a href="#snippets"><i class="icon-chevron-right"></i> Snippets</a></li>
-          <li><a href="#embeds"><i class="icon-chevron-right"></i> Embeds</a></li>
-          <li><a href="#gv"><i class="icon-chevron-right"></i> Global Variables</a></li>
-          <li><a href="#lowvariables"><i class="icon-chevron-right"></i> Low Variables</a></li>
-          <li><a href="#statictemplates"><i class="icon-chevron-right"></i> Static Templates</a></li>
-          <li><a href="#audioplayers"><i class="icon-chevron-right"></i> Audioplayers</a></li>          
-          <li><a href="#pages"><i class="icon-chevron-right"></i> Pages</a></li>
-          <li><a href="#outliers"><i class="icon-chevron-right"></i> Outlier Content Sections</a></li>         
+          <li><a href="#about"><i class="icon-chevron-right"></i> About this manual</a></li>
+          <li><a href="#github"><i class="icon-chevron-right"></i> Site Manual maintenance on GitHub</a></li>
+          <li><a href="#design"><i class="icon-chevron-right"></i> Sitemanual Design</a></li>        
 
         </ul>
       </div> <!-- span3 -->
@@ -52,34 +42,43 @@ description: "How the Site is Constructed"
       <div class="span9">
 
 
-    <!-- Why ExpressionEngine
+    <!-- About this manual
     ================================================== -->
-        <section id="ee-cms">
+        <section id="about">
           <div class="page-header">
-            <h1>ExpressionEngine CMS</h1>
+            <h1>About this manual</h1>
           </div>
-          <p class="lead">Since 2006 we have used ExpressionEngine for our CMS. Technically it's not any better or worse than other platforms like Drupal or WordPress, but it does provide more ease of use and flexibility for web designers. For one thing, there is no default markup or CSS, so you are free to build whatever kinds of templates and pages you wish. You can easily mix static pages with database-driven content pages, with very few limits to what kind of site you can build.</p>
-          <p>Building templates in EE is straightforward and you can use your favorite authoring tools. Templates are saved in the EE database and you can edit them directly in the Control Panel. But the CP gives you a fairly crappy text editor, so it's easier to work with the templates in a dedicated code editor. There are several simple ways of doing this, but on the Mac it's easiest to use a third-party plugin called <a href="http://hellomountee.com/">Mountee</a>, which mounts your EE templates like a drive.</p>
-          <p>EE templates are php files, so you can set your file handling preferences to open them in whatever code editor you prefer.</p>
-          <p><i class="icon-hand-right"></i> <em>A complete EE technical resource and user guide for administrators is available in the <a href="http://ellislab.com/expressionengine/user-guide/">ExpressionEngine User Guide</a></em>.</p>  
+          <p class="lead">The WILL Site Manual was designed and written for three distinct audiences: Content creators, Project or website section owners, and site managers (including developers and designers). The Site Managers section contains documentation on how the site was built in the CMS. A deep understanding of the site architecture can be attained by studying this site manual, along with <a href="https://ellislab.com/expressionengine/user-guide/">the user guide for ExpressionEngine</a>.</p>
+          <p>This site manual is hosted as <a href="https://github.com/willpublicmedia/sitemanual">a repository on GitHub</a>, and served as a project of the <a href="https://github.com/willpublicmedia">GitHub organization willpublicmedia</a>. It uses <a href="http://jekyllrb.com/">Jekyll</a> to create pages, which makes it easy to use includes for page elements like navigation and the footer. GitHub works natively with Jekyll on the server-side, so you don't need to install anything locally other than git.</p> 
+          <p>As further development is done with the WILL website, please keep the Site Manual up to date.</p>
+
       </section>
         
-        <!-- Logging into the CMS
+        <!-- Site Manual maintenance on GitHub
         ================================================== -->
-        <section id="bootstrap">
+        <section id="github">
           <div class="page-header">
-            <h2>The Bootstrap framework</h2>
+            <h2>Site Manual maintenance on GitHub</h2>
           </div>
-          <p class="lead">The WILL website uses the <a href="http://getbootstrap.com/" target="_blank">Bootstrap responsive web design framework</a>.</p> 
-          <p>Bootstrap provides a responsive grid and a useful set of element styles like buttons, forms, labels, and navigation. It also has a very useful JavaScript library based on JQuery, for things like carousels, tabs, accordions, etc. Each of these elements can easily be re-styled.</p>
-          <p><i class="icon-hand-right"></i> <em>The WILL site currently uses Bootstrap 3.2, but Bootstrap is under rapid development and as of January 1, 2015 is at version 3.3. We will update the core Bootstrap files over time, always first on our dev and staging servers before applying changes to the live server.</em></p>          
+          <p class="lead">Here are the basic commands to update the Site Manual via git and GitHub.</p>
+          <p>The Master branch is of course Master, but the sitemanual is served to the web via the branch gh-pages. For the skinny on how this works see <a href="https://help.github.com/articles/user-organization-and-project-pages/">https://help.github.com/articles/user-organization-and-project-pages/</a></p> 
+          <p>So gh-pages serves the sitemanual but I prefer to update the Master branch and then push those changes to gh-pages. Once Master is up to date, this command pushes Master to gh-pages</p>
+          <h3>Editing the Site Manual pages</h3>
+          <p>Assuming you have cloned the Master branch to a local directory, you can simply edit the files using your favorite text editor and save them locally. Here are the basic commands to update the local git repository and then push them to the Master branch on GitHub:</p>
+          <ul>
+            <li><code>git status</code> (optional, it just shows if anything in the local repository has been changed)</li>
+            <li><code>git add -A</code> (adds all changes to the local git and make them ready to commit)</li>
+            <li><code>git commit -m "comment about whatever was changed"</code> (creates a new version instance, along with a comment on what changed)</li>
+            <li><code>git push origin master</code> (pushes the changes to the Master branch on GitHub)</li>
+          </ul>
+          <p> Finally, since the Master branch doesn't actually serve the sitemanual we need to do this: <code>git push origin master:gh-pages</code>. That pushes the changes made to the Master branch to the gh-pages branch which serves the actual pages.</p>
         </section>
 
-    <!-- Entry Date
+    <!-- Sitemanual Design<
     ================================================== -->        
         <section id="site-components">
           <div class="page-header">
-            <h2>Site Components</h2>
+            <h2>Sitemanual Design</h2>
           </div>
           <p class="lead">Every CMS-driven website consists of a bundle of things, like a file system, a database, scripts, and possibly a framework. Here's what we're using:</p>
           <ul>
@@ -93,298 +92,7 @@ description: "How the Site is Constructed"
           </ul>         
         </section>  
         
-     <!-- One Field Group
-    ================================================== -->        
-        <section id="field-group">
-          <div class="page-header">
-            <h2>One Field Group to Rule Them All</h2>
-          </div>
-          <p class="lead">All EE channels throughout the site use the same Custom Field group: items. This allows the reuse template code for all channels, reducing the complexity of templates, and dramatically improving site performance and ease of maintenance.</p>
-          <p>Some channels use only a few fields. Entry forms are customized to only show the relevant fields, to simplify the interface for content authors. It's easy to customize the entry form on a per-user group basis. Here are the <a href="https://ellislab.com/expressionengine/user-guide/cp/content/publish_page_layouts.html" target="_blank">instructions for customizing the Publish Page layout</a>.</p>
-        </section>  
-               
-     <!-- Template and Content Structure
-    ================================================== -->        
-        <section id="templates">
-          <div class="page-header">
-            <h2>Template and Content Structure</h2>
-          </div>
-          <p class="lead">Each section of the site has its own Template Group containing an index page template, and one or more single-entry page templates. Most sections are very simple: a Home page and many entry pages, all generated by two main templates. A few sections are fairly complex, using templates with conditional logic to generate a variety of pages and views.</p>
-          <h3>Template Architecture</h3>
-          <p>All web pages and feeds are generated by using markup and logic contained in:</p>
-        <ul>
-          <li>Templates</li>
-          <li>Snippets</li>
-          <li>Embeds</li>
-          <li>Global Variables</li>
-          <li>Low Variables</li>
-        </ul>
-        <p>Almost all Templates contain only pre-defined variables that are passed on to Snippets. Snippets contain most of the actual markup and logic, but also make use of embedded Global Variables and Embedded templates. Basically, Snippets are the heart and soul of the site, and they include other elements as needed.</p>
-
-<p>Pre-defined variables are passed from the Templates to Snippets, and sometimes from Snippets to Embeds. Each pre-defined variable has been given a prefix to clarify its role in the logic. </p>
-
-<p>For example in the index page for a given content section, we set the value its channel in the variable {pre_channel}, where the prefix “pre_” shows that the variable is being passed to the Snippet before any logic is applied to anything. In the Snippet, {pre_channel} is replaced by the value defined in the template, for example “news”.</p>
-
-<p>By pre-defining many variables in the Templates, we can re-use the same Snippets to generate pages and feeds for the vast majority of the site.</p> 
-
-<h4>Example: new/index template</h4>
-
-<code>
-{preload_replace:pre_title="News"}
-{preload_replace:pre_channel="features|news|newsnational"}
-{preload_replace:pre_logo="IPM_Logo_Main.png"}
-{preload_replace:pre_description="In-depth reporting from WILL, NPR, and other sources"}
-{preload_replace:pre_keywords="News, Public Affairs, WILL, Illinois Public Media, Radio, Public Radio, University of Illinois, Illinois, NPR"}
-{preload_replace:pre_limit="10"}
-{preload_replace:pre_show_future="no"}
-{preload_replace:pre_show_expired="no"}
-{preload_replace:pre_highlights_categories="72"}
-{preload_replace:pre_section_template="news"}
-{preload_replace:pre_tag_channel_template="news"}
-{preload_replace:pre_sidebar_template="embeds/_embed_sidebar_news"}
-{preload_replace:pre_channel_item_name="Stories"}
-{preload_replace:pre_channel_description_entry_id="19028"}
-{preload_replace:pre_offset="3"}
-{preload_replace:pre_entry_order="date"}
-{preload_replace:pre_entry_sort="desc"}
-{preload_replace:pre_player_template="/player/audio"}
-{preload_replace:pre_disable="member_data|categories"}
-{preload_replace:pre_mp3_download="yes"}
-{preload_replace:pre_rss_feed="yes"}
-{preload_replace:pre_show_tags="yes"}
-{preload_replace:pre_show_date="yes"}
-{preload_replace:pre_show_video="no"}
-{preload_replace:pre_show_sharelink="yes"}
-{preload_replace:pre_show_commentlink="yes"}
-{sn_articles}
-</code>
-
-        <h3>ExpressionEngine’s Parse Order</h3>
-        <p>Templates, Snippets, and the other elements are parsed by EE in a specific order. It’s important to understand parse order to follow the logic of page generation. Templates define variables, then pass them to Snippets. Snippets contain Embedded Templates, Global Variables, and Low Variables. Each of these elements is parsed by EE in a specific sequence.  Here’s a handy guide to EE Parse Order:</p>
-
-        <p><a href="http://loweblog.com/downloads/ee-parse-order.pdf" target="_blank">http://loweblog.com/downloads/ee-parse-order.pdf</a></p>
-      </section>
       
-      
-           <!-- Snippets
-    ================================================== -->        
-        <section id="snippets">
-          <div class="page-header">
-            <h2>Snippets</h2>
-          </div>       
-
-        <p class="lead">Snippets do most of the heavy lifting in pulling content from the database. The main snippets used throughout the site are:<p>
-
-        <ul>
-          <li>{sn_articles}</li>
-          <li>{sn_article}</li>
-        </ul>
-
-        <p>These two snippets contain the markup and logic for about 99 percent of the entire site.  The {sn_article} snippet generates home “list” pages of content for most of the major WILL content channels, and the {sn_article} snippet creates single-entry pages for each entry in that channel.</p>
-
-        <p>For each content channel, its index template uses {sn_articles} to create a Home page with a number of entries in summary form. In the template group for that channel, there will be a “story” or “program” template that uses {sn_article} to generate full, single-entry pages. The {sn_articles} snippet is expecting a url_title variable to be passed as part of any links to it (usually as a segment_3), so it can pull in the data for that entry.</p> 
-
-        <p>For example, here is the News home page url using {sn_articles}:</p>
-        
-        <blockquote>http://will.illinois.edu/news</blockquote>
-
-        <p>And here is a News story url containing a url_title variable as part of its url:</p>
-        
-        <blockquote>http://will.illinois.edu/news/story/school-consolidation-referendum-sparks-disagreement</blockquote>
-        
-        <h3>List of all snippets</h3>
-
-        <ul>
-          <li>{sn_ag_audio_daily}</li>
-          <li>{sn_article}</li>
-          <li>{sn_articles}</li>
-          <li>{sn_articles_by_tag}</li>
-          <li>{sn_articles_grid}</li>
-          <li>{sn_articles_related_entries}</li>
-          <li>{sn_audioplayer}</li>
-          <li>{sn_audioplayer_channels}</li>
-          <li>{sn_audioplayer_static_audio_url}</li>
-          <li>{sn_content_channels_all}</li>
-          <li>{sn_content_channels_am}</li>
-          <li>{sn_content_channels_fm}</li>
-          <li>{sn_content_channels_iym}</li>
-          <li>{sn_content_channels_tv}</li>
-          <li>{sn_forms_email}</li>
-          <li>{sn_homepage}</li>
-          <li>{sn_homepage_education}</li>
-          <li>{sn_homepage_illinoisyouthmedia}</li>
-          <li>{sn_homepage_projects}</li>
-          <li>{sn_pages}</li>
-          <li>{sn_pages_full_width}</li>
-          <li>{sn_pbcorecollection}</li>
-          <li>{sn_rss}</li>
-          <li>{sn_tags}</li>
-          <li>{sn_tags_full_articles}</li>
-          <li>{sn_video}</li>
-        </ul>
-
-        </section>    
-        
-               
-     <!-- Embeds
-    ================================================== -->        
-        <section id="embeds">
-          <div class="page-header">
-            <h2>Embeds</h2>
-          </div>
-          <p class="lead">Embedded templates are used in most pages, providing sidebars and other secondary content. Conditional logic is used in many snippets to determine which embedded template is used. </p>
-          <p>For example in the {sn_homepage} snippet, different sidebars are displayed depending on what’s in segment_1 of the url. So <em>http://will.illinois.edu/tv</em> gets a sidebar based on the template <em>embeds/_embed_sidebar_tv</em>, while <em>http://will.illinois.edu/am</em> gets the sidebar for WILL-AM which is <em>embeds/_embed_sidebar_am</em>. This kind of logic is used in many snippets. </p>
-
-          <p>Because Embeds are processed later in the EE parse order, when they are embedded in Snippet it’s necessary to pass pre-defined variable to them from the Snippet. For example:</p>
-        <ul>
-          <li>The template site/index defines a variable of {pre_highlights_categories} and assigns it a value of “66”. </li>
-          <li>The Snippet {sn_homepage} converts the {pre_highlights_categories} variable instantly to “66” wherever it appears in the Snippet. </li>
-          <li>Since the Embed is processed after the Snippet has converted it to “66” we can’t pass on {pre_highlights_categories} to the Embed.</li>
-          <li>Since the Embed is processed after the Snippet has converted it to “66” we can’t pass on {pre_highlights_categories} to the Embed.</li>
-          <li>Inside the Embed, the exp:channel:entries tag can then use embed_highlights_categories to declare categories=”{embed_highlights_categories}”, which the Embed sees as the value “66” we passed from the Snippet.</li>
-        </ul>        
-        <h3>Embeds examples</h3>
-        <ul>
-          <li>embeds/_embed_agriculture_links – Used on main Home page</li>
-          <li>embeds/_embed_sidebar_home – Sidebar on Home page. Includes other embedded elements</li>
-          <li>embeds/_embed_social_metadata – contains social metadata for any page that uses the snippet {sn_articles}</li>
-        </ul>
-        <p>There are many other embedded templates, and they're all located in the Embeds template group. Once you follow the logic for the sidebars, you'll understand how they all work.</p>         
-    </section>
-    
-               
-     <!-- Global Variables
-    ================================================== -->        
-        <section id="gv">
-          <div class="page-header">
-            <h2>Global Variables</h2>
-          </div>
-          <p class="lead">User defined Global Variables contain static content, and are processed very late in the EE parsing order. They are used for links to stylesheets and scripts, or static bits of markup used throughout the site. </p>
-          <p>We use the prefix “gv_” in the name of Global Variables to make them easy to spot inside Templates and Snippets.</p>
-          <p>The only exception to the above is in the case of Low Variables, which also appear inside the Global Variables control panel. To keep them straight, we use the prefix “lv_” for all Low Variables.</p>
-        </section>
-        
-               
-     <!-- Low Variables
-    ================================================== -->        
-        <section id="lowvariables">
-          <div class="page-header">
-            <h2>Low Variables</h2>
-          </div>
-          <p class="lead">Low Variables is an Addon Module that provides a different parsing order for variables, depending on how you want to use them. For example, you can set a Low Variable for parsing before Snippets, so they can process dynamic content before the Snippet is parsed.</p>
-          <p>The Low Variable {lv_edit_this} is used in this way to insert “Edit This” links in content pages if the user is logged in to EE. </p>
-          <p>But Low Variables can also be used to hold static content we want to allow users to edit, like {lv_card_support} which is the fundraising message on the home page.</p>
-          <p>Low Variables can use all the different field types installed in the EE instance, including WYGWAM, Related Entires, and all the rest.  We might find it useful to expand use of Low Variables, but I’ve kept it to a minimum to avoid complicating the site and adding dependencies on Addons.</p>
-          <p>Documentation on the Low Variables module is available here: <a href="http://gotolow.com/addons/low-variables" target="_blank">http://gotolow.com/addons/low-variables</a></p>
-        </section>
-        
-                
-     <!-- Static Templates
-    ================================================== -->        
-        <section id="statictemplates">
-          <div class="page-header">
-            <h2>Static Templates</h2>
-          </div>
-        <p class="lead">A few templates don’t use Snippets, but contain all of their own markup:</p>  
-        <ul>
-          <li>sitemap/index</li>
-          <li>contact/index</li>
-          <li>contact/webmaster</li>
-          <li>weather/index</li>
-          <li>am/willplayer</li>
-          <li>weather/index (contains PHP, and requires PHP to be enabled in template Preferences)</li>
-        </ul> 
-        <p>These templates rarely if ever change, so don't need to be any more complicated.</p>
-        </section>          
-                
-     <!-- Audioplayers: How they work
-    ================================================== -->        
-        <section id="audioplayers">
-          <div class="page-header">
-            <h2>Audioplayers: How they work</h2>
-          </div>
-          <p class="lead">The “player/audio” template is used for all audio archives.</p>
-          <p><em>player/audio</em></p>
-          <p>The player/audio template uses {sn_audioplayer} for the player window markup.  {sn_audioplayer} contains the exp:channel:entries tags which pull in the entry_id from channel, which causes the player to display the entry title, an image if available, and the mp3 file url.</p>
-          <p>Make sure the channel you want audio to play from is added to {sn_audioplayer_channels}.</p>
-          <p><em>player/audioplayer_newscast</em></p>
-          <p>Used for the WILL Newscast which is always the same file name. This template passes title metadata and a static url for the newscast audio file to {sn_audioplayer_static_audio_url}.  The snippet contains the player markup. The same snippet can be used for any other players that need a static audio url, either a file or a live steam. </p>
-          <p>Newscast audio url: http://audio01.will.illinois.edu/WILLAM580newscast.mp3</p>
-          <p><em>player/audioplayer_irr</em></p>
-          <p>Used for the Illinois Radio Reader live stream. This also uses {sn_audioplayer_static_audio_url}, and passes the IRR live stream url to the snippet. </p>
-          <p>IRR live stream url: http://icecast.will.illinois.edu:8000/WILL-IRR</p>
-          <p><em>am/willplayer and fm/willplayer</em></p>
-          <p>These templates reflect legacy urls from past WILL websites. We kept them the same for that reason. They contain all the markup for the WILL-AM and WILL-FM live stream players, including static links to the stream urls. </p>
-          <p>These templates can be enhanced in various ways. They contain a “promocard” section that can be used for promotional announcements, underwriting, or anything else. These currently contain a static fundraising message, but the plan is to make them dynamic and editable by Marketing.</p>          
-          
-        </section>    
-        
-     <!-- Pages
-    ================================================== -->        
-        <section id="pages">
-          <div class="page-header">
-            <h2>Pages</h2>
-          </div>
-          <p class="lead">The website contains many unique pages that are maintained in the section named WILL Pages. Each entry in WILL Pages is given a Pages URI, which is different from a normal EE entry url in that it can be anything. The entry is also assigned to a specific template via the Template dropdown list. For example our About page is a WILL Page entry given the Pages URI of “/about”, and assigned to the template “pages/about”. </p>
-          <p>Most WILL Pages are straightforward, and contain content that doesn’t often change. But there are a few fairly complicated Pages that require special care when editing. We keep the WILL Pages section fairly locked down in terms of user access for this reason.</p>
-          
-          <h3>Outlier Pages</h3>
-          <p>Several entries include markup that is stripped by ExpressionEngine when you reopen the entry for editing. This is actually the WYGWAM field (Description) trying to protect from malicious code being injected into the database. WYGWAM strips out key part of the markup, messing up the entire page. The solution is to edit the markup in a standard text/html editor, then paste it into the WYGWAM Description field in Source view. WYGWAM doesn’t mess up the markup on save, just upon re-opening the entry for editing.</p>
-          <p><em>Contribute to WILL</em></p>
-          <p>This has the url http://will.illinois.edu/support/pledgeform, and also the alias url http://willpledge.org.  The WILL Pages entry contains Bootstrap and other markup that must be entered into the Description WYGWAM field as html. </p>
-          <p><em>Corporate Support</em></p>
-          <p>This WILL Page contains complex markup including a Collapse section and html5 <audio> content.</p>
-          <p><em>Repeating: Don’t try to edit these in EE</em></p>
-          <p>The above a few other entries contain complicated markup best maintained outside of EE.  You can paste the markup into WYGWAM in Source view and it’ll save just fine. But when you re-open the entry, WYGWAM mangles the markup. Don’t even bother trying to edit this within the entry. Maintain the markup for the entry outside of EE, and paste it in the entry as changes are needed.</p>                    
-        </section>              
-        
-     <!-- Outliers
-    ================================================== -->        
-        <section id="outliers">
-          <div class="page-header">
-            <h2>Outlier Content Sections</h2>
-          </div>
-          <p class="lead">Most content sections are very simple: a home "listing" page with summary views of multiple entries, and an "story" or "program" page for a complete view of single entries within the content section. But a few sections are more complex, and require unique design solutions.</p>
-          
-          <h3>Illinois Youth Media</h3>
-          <p>The Home page of this section uses the snippet {sn_homepage_illinoisyouthmedia} to create a display featuring the top three/most recent projects, and below that a grid showing all other projects. </p>
-          <p>Project pages use a snippet named {sn_homepage_projects} to create a project Home page.  This snippet is also used for each single entry page in the project using {if} statements to display conditional markup. This is either extremely clever and elegant, or more complicated than I would like, I can’t decide which. </p>
-          <p>With a little more development, {sn_homepage_projects} might be useful for any future projects of any kind. This would require adding a variable-driven sidebar, at the very least. </p>
-          
-          <h3>Mental Health</h3>
-          <p>The template for this single-page legacy project uses {sn_articles_related_entries} to display related entries from arbitrary channels, and a new channel Content Collections or {collections} to create a single entry containing the related entries. </p>
-          <p>Important: The mentalhealth/index template contains a variable for {pre_entry_id}, which contains the entry_id of the Mental Health entry in the Content Collections channel. Like this: {preload_replace:pre_entry_id="33111"}</p>
-          <p>New collections can now be created simply by:</p>
-        <ul>
-          <li>adding a new template group named for the collection’s desired segment_2</li>
-          <li>creating an entry in Content Collections with the related entries</li>
-          <li>then adding the entry_id in the template’s {pre_entry_id} variable</li>
-        </ul>
-
-
-          <h3>Election2014</h3>
-          <p>This section consists of two web pages and the live audio player for IRR. The two pages are both created as WILL Pages. These point to the illinoisradioreader/index template, which uses the standard {sn_pages} snippet and the embeds/_embed_sidebar_illinoisradioreader template for its sidebar.  The audio player template is player/audioplayer_irr, and the sidebar contains the link to launch it.</p>
-          <ul>
-            <li>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</li>
-            <li>{preload_replace:pre_tags="election-2014"}</li>
-            <li>{sn_articles_by_tag}</li>
-          </ul>
-          <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen). </p>
-          <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: {preload_replace:pre_tags="illinois-governor-2014"}</p>
-          <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the {pre_channel} variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
-          <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>     
-          
-           
-          <h3>Education Section</h3>
-          <p>The index template uses a unique {sn_homepage_education} to display a 2x2 grid of Education Blog posts sorted by tag. The Education Blog displays all blog entries, and has four sub-blogs sorted by the four main tags:</p>
-        <ul>
-          <li>Youth Made Media (url-safe tag for template is youth-made-media)</li>
-          <li>PBS Learningmedia (pbs-learningmedia)</li>
-          <li>For Teachers (for-teachers)</li>
-          <li>For Parents and Families (for-parents-and-families)</li>
-        </ul>   
-        <p><i class="icon-hand-right"></i> <em>Important: Blog authors must use these exact tags to allow posts to be correctly sorted. Adding a hyphen between any of the tag words entered conflicts with the url-safe tag, so hyphens should never be used in tags.</em></p>                                 
-        </section>          
       </div>
     </div>
   </div>
