@@ -33,6 +33,7 @@ description: "How to do hard to find things"
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#will-alert"><i class="icon-chevron-right"></i> WILL drop-down alerts</a> 
+		  <li><a href="#will-podcasts"><i class="icon-chevron-right"></i> WILL podcasts</a> 
         </ul>
       </div> <!-- span3 -->
       
@@ -62,8 +63,24 @@ description: "How to do hard to find things"
 		  <code>{exp:low_variables:single var="lv_severeweather_alert"}</code></p>
       </section>
         
+	        <section id="will-podcasts">
+          <div class="page-header">
+            <h1>WILL Podcasts</h1>
+          </div>
+          <p class="lead">We can do podcasts on the site. The 21st, Environmental Almanac, and Legal Issues in the News are examples.</p>
+          <p>First you have to write and update the copy that will be displayed. This is done in Add-ons -> Modules -> Low Variables -> Editable content in the lv_alert_problem local variable.</p>
+		  <p>Embed code:<br />
+		  <code><div class="pb-embed" data-feed="http://will.illinois.edu/21stshow/rss" data-limit="XXXX">&nbsp;</div>
+<script src="https://will.illinois.edu/WILLPodcastEmbed.js"></script>
+</code>
+
+          <p>Replace the RSS URL with the URL of the podcast you want to embed on another site. Replace XXXX with the number of items from the feed that you want to display.</p>
+      </section>	
+		
       </div>
-    </div>
+    
+	
+	</div>
 
   </div>
 
