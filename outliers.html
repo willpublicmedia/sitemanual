@@ -126,10 +126,14 @@ description: "Unusual website sections that need special attention"
             <li><code>{preload_replace:pre_tags="election-2014"}</code></li>
             <li><code>{sn_articles_by_tag}</code></li>
           </ul>
+          <p>The template calls the snippet <code>{sn_articles_by_tag}</code> which contains all the html and EE code to display the tagged entries. Here's the opening EE Tagger code:</p>
+          <code>{exp:tagger:entries_quick channel="{pre_channel}" tag="{pre_tags}" orderby="entry_date" sort="desc" limit="10000"}</code>
           <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen - the Tagger module adds hyphens between words, and the resulting string becomes the "uri safe tagname"). </p>
           <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
           <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
           <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>  
+          <h3>Content producers must use specified tags</h3>
+          <p>This solution depends on content producers consistently using the specific tags with each entry intended for the collection. When setting up a new tag-based collection, make sure to document and communicate which tag(s) to use.</p>
           <p>The right sidebar of the Election 2014 templates also contains a feed pulling from the [NPR Story API](https://www.npr.org/api/index). In this case it's a feed of election stories but the API call can be changed to any other topic. For example, we used the NPR API to pull stories on Mental Health and display them on <a href="http://will.illinois.edu/mentalhealth">WILL's Mental Health project page</a>. 
         </section>  
         
