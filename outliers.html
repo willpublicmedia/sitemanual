@@ -37,7 +37,7 @@ description: "Unusual website sections that need special attention"
           <li><a href="#youthmedia"><i class="icon-chevron-right"></i> Illinois Youth Media</a></li>
           <li><a href="#mentalhealth"><i class="icon-chevron-right"></i> Mental Health Special Series</a></li>
           <li><a href="#illinoisradioreader"><i class="icon-chevron-right"></i> Illinois Radio Reader</a></li>
-          <li><a href="#election2014"><i class="icon-chevron-right"></i> Election 2014</a></li>
+          <li><a href="#tag-collection-pages"><i class="icon-chevron-right"></i> Tag-based Collection Pages (e.g. Elections)</a></li>
         </ul>
       </div> <!-- span3 -->
       
@@ -113,16 +113,16 @@ description: "Unusual website sections that need special attention"
 
         </section>
 
-     <!-- Election2014
+     <!-- Tag-based Collection Pages (e.g. Elections)
     ================================================== -->        
-        <section id="election2014">
+        <section id="tag-collection-pages">
           <div class="page-header">
-            <h2>Election 2014</h2>
+            <h2>Tag-based Collection Pages (e.g. Elections)</h2>
           </div> 
-          <p class="lead">We built a new kind of Election News page for the 2014 elections, which could provide a great template for 2016 etc and maybe other content projects.</p>
-          <p>The idea is to use the Tagger module to display content from several channels. In the election2014 template group, the index page contains the following (plus other stuff but these are the key):</p>
+          <p class="lead">Starting in 2014 we built a new kind of Election News page, which is a great template for using tags to aggregate content on one "collection" page.</p>
+          <p>The idea is to use the Tagger module to display content from several channels. In the election2014 template group, the index page contains the following key <code>preload_replace</code> key:value pairs (plus other stuff):</p>
           <ul>
-            <li><code>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</code></li>
+            <li>{preload_replace:pre_channel="features|news|newsnational|focus|highlights"}</code></li>
             <li><code>{preload_replace:pre_tags="election-2014"}</code></li>
             <li><code>{sn_articles_by_tag}</code></li>
           </ul>
@@ -130,7 +130,7 @@ description: "Unusual website sections that need special attention"
           <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
           <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
           <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>  
-          <p>The right sidebar of the Election 2014 templates also contains a feed pulling from the NPR Story API. In this case it's a feed of election stories but the API call can be changed to any other topic. We used the NPR API to pull stories on Mental Health and display them on <a href="http://will.illinois.edu/mentalhealth">WILL's Mental Health project page</a>. 
+          <p>The right sidebar of the Election 2014 templates also contains a feed pulling from the [NPR Story API](https://www.npr.org/api/index). In this case it's a feed of election stories but the API call can be changed to any other topic. For example, we used the NPR API to pull stories on Mental Health and display them on <a href="http://will.illinois.edu/mentalhealth">WILL's Mental Health project page</a>. 
         </section>  
         
                               
