@@ -45,9 +45,11 @@ description: "How to do hard to find things"
           <div class="page-header">
             <h1>WILL drop-down alerts</h1>
           </div>
-          <p class="lead">The website has the capability to display dismissable alerts such as when transmitter maintenance will take the station off the air. To create these alerts, two things must be done. </p>
-          <p>First you have to write and update the copy that will be displayed. This is done in Add-ons -> Modules -> Low Variables -> Editable content in the lv_alert_problem local variable.</p>
-		  <p>Sample code:<br />
+          <p class="lead">The website has the capability to display dismissable alerts such as when transmitter maintenance will take the station off the air, or a special fundraising message, etc.</p>
+          <p>Several of these alerts currently exist in the CMS, but the display of these alerts are usually disabled by commenting out their code. To enable display, remove the "comment out" elements.</p>
+          <p>To create or update these alerts, two things must be done. </p>
+          <p>First, write or update the copy that will be displayed. This is done in Add-ons -> Modules -> Low Variables -> Editable content in the lv_alert_problem local variable. This is also where we disable or enable the alert display by adding or removing the "comment out" html elements.</p>
+		  <h5>Here's a sample of the code for an "Off the Air" alert:</h5>
 		  <code>&lt;div class="alert alert-warning alert-dismissible" role="alert"&gt;<br />
   &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;/button&gt;<br />
   &lt;strong>Notice:&lt;/strong><br />On Wednesday evening July 15, WILL is performing maintenance at
@@ -57,10 +59,13 @@ description: "How to do hard to find things"
   <br />in Urbana and online at our website. We apologize for the inconvenience during this necessary 
   <br />maintenance work.
 &lt;/div&gt;</code>
-          <p>Second you need to tell ExpressionEngine to display the alert. To add the alert, go to Template Manager -> Snippets. To add to the main home page, click sn_homepage. To add the alert to other home pages, you need to do similar things to sn_homepage_agriculture, sn_homepage_education, sn_homepage_fm, etc. etc.</p>
-		  <p><a href="https://will.illinois.edu/admin.php?/cp/design/snippets_edit&snippet=sn_homepage&S=64bd05506c08b45bb0c1ed227d35604d">Shortcut to sn_homepage</a></p>
-		  <p>Find the section where lv_alert_problem is mentioned, and add this line after the comment:<br />
-		  <code>{exp:low_variables:single var="lv_severeweather_alert"}</code></p>
+          <p>Second you need to tell ExpressionEngine where to display the alert. To add the alert, go to Template Manager -> Snippets. To add to the main home page, go to the <a href="https://will.illinois.edu/admin.php?/cp/design/snippets_edit&snippet=sn_homepage&S=64bd05506c08b45bb0c1ed227d35604d">sn_homepage</a>. To add the alert to other home pages, you need to do similar things to sn_homepage_agriculture, sn_homepage_education, sn_homepage_fm, etc. etc.</p>
+          <p>The lv_alert_pledge and lv_alert_problem snippets are already added to the main home page, placed just before the slideshow at the top. That's probably the best place for these and other alerts, but stacking them would be visually problematic.</p>
+		  
+		  <h4>To add the Low Variable to the page, paste this into the snippet</h4>
+      <p>In this case we're adding the Pledge Alert:</p>
+		  <code>{exp:low_variables:single var="lv_alert_pledge"}</code>
+      <p>Remember to commend out the lv_alert_pledge snippet when the pledge drive is done and you don't want the alert to display!</p>
       </section>
         
 	        <section id="will-podcasts">
