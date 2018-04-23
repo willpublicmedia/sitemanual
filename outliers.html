@@ -135,7 +135,7 @@ description: "Unusual website sections that need special attention"
           <ol>
             <li>Create a new template for the page. If you want the url to be a direct child of the home page, you'll need to create a new template group first. Then just use the index template of that group. Otherwise, create a new tag-based template inside an existing template group e.g. news.</li>
             <li>Probably easiest to just copy an existing tag-based template (like election2014) and change the details in the new template.</li>
-            <li>Put the desired tag name in the <code>{preload_replace:pre_tags="tag-name"}</code> variable. The tag name must be "uri safe," meaning no spaces, so if the chosen tag has spaces use a &endash; between words. <em>Make sure content authors use this exact tag</em>.</li>
+            <li>Put the desired tag name in the <code>{preload_replace:pre_tags="tag-name"}</code> variable. The tag name must be "uri safe," meaning no spaces, so if the chosen tag has spaces use a &ndash; between words. <em>Make sure content authors use this exact tag</em>.</li>
             <li>Make sure to include the relevant channels in the <code>{pre_channel}</code> variable.</li>
             <li>Edit the <code>{pre_title}</code> and <code>{pre_description}</code> variable values to say what the page is about. Almost there!</li>
             <li>Create a new <em>Channel Description</em> entry for the tag-based page. This needs a title, description, and an image, which will display at the top of the tag-based page.</li>
