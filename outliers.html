@@ -130,13 +130,26 @@ description: "Unusual website sections that need special attention"
           <p><code>{exp:tagger:entries_quick channel="{pre_channel}" tag="{pre_tags}" orderby="entry_date" sort="desc" limit="10000"}</code></p>
           <p>The snippet simply displays any entries in the specified channels containing the tag “election-2014” (which is added to entries as election 2014, without the hyphen - the Tagger module adds hyphens between words, and the resulting string becomes the "uri safe tagname"). </p>
           <p>The other templates in the Election2014 group do the same thing using tags for the different election contests, e.g. the election2014/illinois-governor template contains this variable: <code>{preload_replace:pre_tags="illinois-governor-2014"}</code></p>
-          <p>If you want to create a new project/template group that sorts content by tag, just include the right channels in the <code>{pre_channel}</code> variable, and the uri safe tagnames in the {pre_tag} variable. </p>     
+
+          <h3>Steps needed to create a tag-based collection page</h3>
+          <ol>
+            <li>Create a new template for the page. If you want the url to be a direct child of the home page, you'll need to create a new template group first. Then just use the index template of that group. Otherwise, create a new tag-based template inside an existing template group e.g. news.</li>
+            <li>Probably easiest to just copy an existing tag-based template (like election2014) and change the details in the new template.</li>
+            <li>Put the desired tag name in the <code>{preload_replace:pre_tags="tag-name"}</code> variable. The tag name must be "uri safe," meaning no spaces, so if the chosen tag has spaces use a &endash; between words. <em>Make sure content authors use this exact tag</em>.</li>
+            <li>Make sure to include the relevant channels in the <code>{pre_channel}</code> variable.</li>
+            <li>Edit the <code>{pre_title}</code> and <code>{pre_description}</code> variable values to say what the page is about. Almost there!</li>
+            <li>Create a new <em>Channel Description</em> entry for the tag-based page. This needs a title, description, and an image, which will display at the top of the tag-based page.</li>
+            <li>Get the Entry ID of that Channel Decription entry, and use it in the new template for the value of <code>{pre_channel_description_entry_id}</code></li>
+          </ol>
+          <p>After setting up the new template, entries using the designated tag will display on the tag page as they are added to the site.</p>
+          <h3>For help with the Tagger module</h3>    
           <p>Documentation on the EE Tagger extension is available here: <a href="http://www.devdemon.com/documentation/tagger/" target="_blank">http://www.devdemon.com/documentation/tagger/</a></p>  
           <h3>Content producers must use specified tags</h3>
           <p>This solution depends on content producers consistently using the specific tags with each entry intended for the collection. When setting up a new tag-based collection, make sure to document and communicate which tag(s) to use.</p>
           <h3>Sidebar can be anything</h3>
           <p>As with most site templates, the sidebar on tag-based collection pages can be anything desired. If you want something custom, just create a new sidebar in the <code>embeds</code> template group and include it in the template like this:</p>
           <p><code>{preload_replace:pre_sidebar_template="embeds/_embed_sidebar_election2014"}</code></p>
+          <h3>Note on Election page sidebars</h3>
           <p>The right sidebar of the Election 2014 templates also contains a feed pulling from the <a href="https://www.npr.org/api/index">NPR Story API</a>. In this case it's a feed of election stories but the API call can be changed to any other topic. For example, we used the NPR API to pull stories on Mental Health and display them on <a href="http://will.illinois.edu/mentalhealth">WILL's Mental Health project page</a>. 
         </section>  
         
