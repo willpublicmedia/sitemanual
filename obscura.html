@@ -86,12 +86,12 @@ description: "How to do hard to find things"
         </ul>
         <h3>How the pages/redirect template works</h3>
         <p>The pages/redirect template consists of one simple code block:</p>
-        <code>{exp:channel:entries channel='pages'}
-{weblinks limit="1"}
-<meta http-equiv="REFRESH" content="0;url={link_url}">
-{/weblinks}
-{/exp:channel:entries}</code>
-        <p>Since the template doesn't need to render any html, it doesn't need any markup. Just the meta tag that redirects to the <code>{link_url}</code> in the entry.</p>
+        <code>%7Bexp:channel:entries channel='pages'%7D
+%7Bweblinks limit="1"%7D
+<meta http-equiv="REFRESH" content="0;url=%7Blink_url%7D">
+%7B/weblinks%7D
+%7B/exp:channel:entries%7D</code>
+        <p>Since the template doesn't need to render any html, it doesn't need any markup. Just the meta tag that redirects to the <code>%7Blink_url%7D</code> in the entry.</p>
 
       </section>    
 
