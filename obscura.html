@@ -32,8 +32,9 @@ description: "How to do hard to find things"
     <div class="row">
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
-          <li><a href="#will-alert"><i class="icon-chevron-right"></i> WILL drop-down alerts</a> 
-		  <li><a href="#will-podcasts"><i class="icon-chevron-right"></i> WILL podcasts</a> 
+          <li><a href="#will-alert"><i class="icon-chevron-right"></i> WILL drop-down alerts</a></li>
+          <li><a href="#url-redirects"><i class="icon-chevron-right"></i> URL redirects</a></li> 
+		      <li><a href="#will-podcasts"><i class="icon-chevron-right"></i> WILL podcasts</a></li> 
         </ul>
       </div> <!-- span3 -->
       
@@ -43,7 +44,7 @@ description: "How to do hard to find things"
     <!-- WILL drop-down alerts    ================================================== -->
         <section id="will-alert">
           <div class="page-header">
-            <h1>WILL drop-down alerts</h1>
+            <h2>WILL drop-down alerts</h2>
           </div>
           <p class="lead">The website has the capability to display dismissable alerts such as when transmitter maintenance will take the station off the air, or a special fundraising message, etc.</p>
           <p>Several of these alerts currently exist in the CMS, but the display of these alerts are usually disabled by commenting out their code. To enable display, remove the "comment out" elements.</p>
@@ -69,18 +70,42 @@ description: "How to do hard to find things"
       <p>Remember to comment out the lv_(whatever_alert) snippet when the need for it is done and you don't want the alert to display!</p>
       </section>
         
-	        <section id="will-podcasts">
-          <div class="page-header">
-            <h1>WILL Podcasts</h1>
-          </div>
-          <p class="lead">We can do podcasts on the site. The 21st, Environmental Almanac, and Legal Issues in the News are examples.</p>
-          <p>First you have to write and update the copy that will be displayed. This is done in Add-ons -> Modules -> Low Variables -> Editable content in the lv_alert_problem local variable.</p>
-		  <p>Embed code:<br />
-		  <code>&lt;div class="pb-embed" data-feed="http://will.illinois.edu/21stshow/rss" data-limit="XXXX">&nbsp;&lt;/div&gt;
-		&lt;script src="https://will.illinois.edu/WILLPodcastEmbed.js"&gt;&lt;/script&gt;
-</code>
+      <section id="url-redirects">
+        <div class="page-header">
+          <h2>URL Redirects</h2>
+        </div>
+        <p class="lead">We can create an arbitrary custom url, using the site domain of <code>will.illinois.edu</code>, and redirect it to any other url.</p>
+        <p>Example use case: We need a simple link to an Allegiance pledge form. So we can make a url of <code>https://will.illinois.edu/ThinkAgain</code> and have it redirect to the Allegiance form (which has a long and complicated url).</p>
+        <h3>How to create a url redirect</h3>
+        <ul>
+          <li>Create a new entry in the WILL Pages channel.</li>
+          <li>Enter the starting url in the Pages URI field, e.g. <code>/ThinkAgain</code>. As always with the Pages URL, the site domain is included automatically before the first backslash.</li>
+          <li>In the Template dropdown select <code>pages/redirect</code></li>
+          <li>In the Links to other Web Pages field, enter the destination url for thue redirect, e.g. that long and complicated Allegiance web form.</li>
+          <li>Save the entry and boom, the redirect will start working.</li>
+        </ul>
+        <h3>How the pages/redirect template works</h3>
+        <p>The pages/redirect template consists of one simple code block:</p>
+        <code>{exp:channel:entries channel='pages'}
+{weblinks limit="1"}
+<meta http-equiv="REFRESH" content="0;url={link_url}">
+{/weblinks}
+{/exp:channel:entries}</code>
+        <p>Since the template doesn't need to render any html, it doesn't need any markup. Just the meta tag that redirects to the <code>{link_url}</code> in the entry.</p>
 
-          <p>Replace the RSS URL with the URL of the podcast you want to embed on another site. Replace XXXX with the number of items from the feed that you want to display.</p>
+      </section>    
+
+      <section id="will-podcasts">
+        <div class="page-header">
+          <h2>WILL Podcasts</h2>
+        </div>
+        <p class="lead">We can do podcasts on the site. The 21st, Environmental Almanac, and Legal Issues in the News are examples.</p>
+        <p>First you have to write and update the copy that will be displayed. This is done in Add-ons -> Modules -> Low Variables -> Editable content in the lv_alert_problem local variable.</p>
+		    <p>Embed code:<br />
+		      <code>&lt;div class="pb-embed" data-feed="http://will.illinois.edu/21stshow/rss" data-limit="XXXX">&nbsp;&lt;/div&gt;
+		&lt;script src="https://will.illinois.edu/WILLPodcastEmbed.js"&gt;&lt;/script&gt;
+          </code>
+        <p>Replace the RSS URL with the URL of the podcast you want to embed on another site. Replace XXXX with the number of items from the feed that you want to display.</p>
       </section>	
 		
       </div>
