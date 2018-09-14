@@ -75,13 +75,15 @@ description: "How to do hard to find things"
           <h2>URL Redirects</h2>
         </div>
         <p class="lead">We can create an arbitrary custom url, using the site domain of <code>will.illinois.edu</code>, and redirect it to any other url.</p>
-        <p>Example use case: We need a simple link to an Allegiance pledge form. So we can make a url of <code>https://will.illinois.edu/ThinkAgain</code> and have it redirect to the Allegiance form (which has a long and complicated url).</p>
+        <h3>Example use case</h3> 
+        <p>Let's say we need a human-readable link to an Allegiance pledge form. So we want a url of e.g. <code>https://will.illinois.edu/ThinkAgain</code> and have it redirect to the Allegiance form (which has a long and complicated url).</p>
+        <p>What to do? Create a url redirect!</p>
         <h3>How to create a url redirect</h3>
         <ul>
           <li>Create a new entry in the WILL Pages channel.</li>
           <li>Enter the starting url in the Pages URI field, e.g. <code>/ThinkAgain</code>. As always with the Pages URL, the site domain is included automatically before the first backslash.</li>
           <li>In the Template dropdown select <code>pages/redirect</code></li>
-          <li>In the Links to other Web Pages field, enter the destination url for thue redirect, e.g. that long and complicated Allegiance web form.</li>
+          <li>In the Links to other Web Pages field, enter the destination url for the redirect, e.g. that long and complicated Allegiance web form.</li>
           <li>Save the entry and boom, the redirect will start working.</li>
         </ul>
         <h3>How the pages/redirect template works</h3>
@@ -95,7 +97,7 @@ description: "How to do hard to find things"
         <div class="page-header">
           <h2>WILL Podcasts</h2>
         </div>
-        <p class="lead">We can do podcasts on the site. The 21st, Environmental Almanac, and Legal Issues in the News are examples.</p>
+        <p class="lead">We can display podcasts as html on the site. The 21st, Environmental Almanac, and Legal Issues in the News are examples.</p>
         <p>First you have to write and update the copy that will be displayed. This is done in Add-ons -> Modules -> Low Variables -> Editable content in the lv_alert_problem local variable.</p>
 		    <p>Embed code:<br />
 		      <code>&lt;div class="pb-embed" data-feed="http://will.illinois.edu/21stshow/rss" data-limit="XXXX">&nbsp;&lt;/div&gt;
