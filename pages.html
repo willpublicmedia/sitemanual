@@ -61,9 +61,24 @@ description: "How to Publish a single Page"
           <h3>Special purpose templates</h3>
           <p>The <em>Template</em> dropdown list provides two very special purpose templates you can use as needed:</p>
           <h4>full_width_html</h4>
-          <p>This full-width template is a kind of shell with only the WILL top navigation and the footer. For the page content can design anything you want just using the main Description field.</p>
-          <p>For example, let's say you want to design a page with a unique set of columns, and your comfortable coding the columns yourself using html and the <a href="https://getbootstrap.com/docs/3.3/">Bootstrap grid framework</a>. Select the <em>full_width_html</em> template, switch the Description field to Source view, and you can add just about any code you want including custom styles. Here's an example:</p>
+          <p>This <em>pages/full-width</em> template is a kind of shell with only the WILL top navigation and the footer. For the page content you can design anything you want just using the main Description field.</p>
+          <p>For example, let's say you want to design a page with a unique set of columns, and you're comfortable coding the columns yourself using html and the <a href="https://getbootstrap.com/docs/3.3/">Bootstrap grid framework</a> which we use for the website. Select the <em>pages/full_width_html</em> template, switch the Description field to Source view, and you can add just about any code you want including custom styles. Here's an example entry using the <em>full_width_html</em> template:</p>
           <img src="/assets/img/pages-entry-template-dropdown" alt="pages template dropwdown list">
+          <p>Here's the page for this entry: <a href="https://will.illinois.edu/greatamericanread">https://will.illinois.edu/greatamericanread</a>. As you can see it has some custom styles, including a 2x2 grid for the videos. The custom CSS and the Bootstrap markup were added in the entry itself.</p>
+          <h4>Redirects</h4>
+          <p>The <em>pages/redirect</em> template has one purpose: redirecting the <em>Pages URI</em> to another url. This is useful in cases where a simple WILL url is needed, like <em>will.illinois.edu/renewmygift</em>, and you want it redirected to another url for a donation form or whatever.</p>
+          <p>To use the <em>pages/redirect</em> template do this:
+            <ol>
+              <li>Create a new entry in the WILL Pages channel</li>
+              <li>Title it anything you want. The title won't display anywhere, so use it to describe the redirect, e.g. "Redirect: Renew My Gift".</li>
+              <li>In the <em>Pages URI</em> field, enter the uri segment you want redirected to the target url.</li>
+              <li>In the <em>Template</em> dropdown, select the <em>pages/redirect</em> template.</li>
+              <li>Scroll down to the <em>Links to other Web Pages</em> field, and enter the target url in the <em>Link URL</em> part of the field.</li>
+              <li>Save the entry and you're done. No other fields are needed for redirects.</li>
+            </ol>
+            <p>Here's an example entry showing the fields needed to create a redirect. Unneeded fields are collapsed in this screenshot just to get them out of the way:</p>
+            <img src="/assets/img/pages-redirect-entry.png" alt="a website entry showing fields needed for a redirect">
+
       </section>
                                       
         
