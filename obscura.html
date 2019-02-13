@@ -33,6 +33,7 @@ description: "How to do hard to find things"
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#will-alert"><i class="icon-chevron-right"></i> WILL dismissible alerts</a></li>
+          <li><a href="#tag-based-special-projects"><i class="icon-chevron-right"></i> Tag-based Content Collections</a></li>
           <li><a href="#url-redirects"><i class="icon-chevron-right"></i> URL redirects</a></li> 
 		      <li><a href="#will-podcasts"><i class="icon-chevron-right"></i> WILL podcasts</a></li> 
         </ul>
@@ -71,7 +72,53 @@ description: "How to do hard to find things"
       <p>Replace "lv_alert_pledge" with the name of whatever alert you need to display.</p>
       <p>Remember to comment out the lv_(whatever_alert) snippet when the need for it is done and you don't want the alert to display!</p>
       </section>
-        
+
+    <!-- Tag-based Content Collections    ================================================== -->     
+      <section id="tag-based-special-projects">
+        <div class="page-header">
+          <h2>Tag-based Special Project Pages</h2>
+        </div>   
+        <p class="lead">Sometimes we need a page for displaying content tagged with a specific keyword/tag. This is different from the unique pages created automatically for each tag in the CMS. This section will explain why we sometimes need something different, and how to create a special tag-based collection.</p>
+        <h3>What's Different about a Tag-based Content Collection</h3>
+        <p>Let's say we have special project about the Supplemental Nutrition Assistance Program (SNAP). We're going to produce News stories, do interviews on The 21st, and produce some video segments and whatever else. We want a special project page for the SNAP series and in addition to the content, that page should have its own SNAP series branding and description.</p>
+        <p> Let's say for example like <a href="https://will.illinois.edu/news/snapseries" title="this SNAP Series page">this SNAP Series page</a>.</p>
+        <p>This is different from a regular tag page in several ways: 
+          <ul>
+            <li>The regular tag page for the tag "snap-series" displays the same content but doesn't have a unique brand and description, and there's no way to add these without changing the way all regular tag pages work. We want the SNAP series page to look like a special project.</li>
+            <li>Regular tag pages behave differently in other ways. For example, the <a href="https://will.illinois.edu/tags/snap">tag page for "snap"</a> displays all posts tagged snap, and that's more than we want in our special series. It only displays the post titles, and includes content from all channels. We may or may not want that for our special series.</li>
+            <li>We also have some regular tag pages designed to display tag-based content only from specific channels. For example the template <code>tags/news</code> displays only News channel content based on its tag, like <a href="https://will.illinois.edu/tags/news/affordable-care-act/">https://will.illinois.edu/tags/news/affordable-care-act/</a>. In this case "affordable-care-act" in the 3rd url segment is the url-safe representation of the tag "Affordable Care Act". And the template <code>tags/news</code> is set to only display News content with that or any other tag.</li>
+          </ul>
+        <p>But with a special project we need more than a regular tag page. It needs a description at the top, and it can display posts from one or more channels that you specify when setting it up. Here's how to do that.</p>
+        <h3>Setting up a Tag-based Special Project Page</h3>
+        <p>Here are the ingredients:</p>
+        <ol>
+          <li>A description for the project as an entry in the Channel Descriptions channel. Should contain some kind of branding image along with a short about of text.</li>
+          <li>A new template for the project. It doesn't matter which Template Group the template is in, especially if we're going to include content from more than one channel.</li>
+          <li>A tag to use for the project. Very likely this is a tag created for just the project, so as to limit the number of entries the page will display to just those you really want to display. For example with the SNAP Series project the tag was "snap-series" and not "snap", because the latter pulls in a ton of entries we didn't want to display on the project page.</li>
+        </ol>
+        <h4>The Template</h4>
+        <p>You can copy the page template from another tag-based project (like news/snapseries), but here's the basic idea:</p>
+        <code>
+          {preload_replace:pre_logo="IPM_Logo_Main.png"}
+          {preload_replace:pre_title="Stories on the Supplemental Nutrition Assistance Program from Illinois Public Media"}
+          {preload_replace:pre_description="Stories on the Supplemental Nutrition Assistance Program from Illinois Public Media and WILL-AM-FM-TV-Online, the public media service at the University of Illinois"}
+          {preload_replace:pre_sidebar_template="embeds/_embed_sidebar_news"}
+          {preload_replace:pre_channel="features|news|newsnational|21stshow"}
+          {preload_replace:pre_channel_description_entry_id="48841"}
+          {preload_replace:pre_tags="snap-series"}
+          {sn_articles_by_tag}
+        </code>
+        <p>Include the correct Channel Description id for the project, and make sure to use url-safe tags in the pre-tags variable. Probably use only one tag, to limit entries to just those wanted for the series.</p>
+        <p>Include the specific channels from which content will display on the project page.</p>
+        <p>Edit the text for the other variables as needed. The pre_title and pre_description variables are used for metadata in the pages head section, and nowhere else.</p>
+        <p>Include the appropriate sidebar.</p>
+        <h4>OK and very important:</h4>
+        <p><strong>Make sure whoever is posting content for the project knows what tag to use</strong>.</p>
+        <p>The snippet <code>{sn_articles_by_tag}</code> does the rest.</p>
+
+
+
+    <!-- URL Redirects    ================================================== -->        
       <section id="url-redirects">
         <div class="page-header">
           <h2>URL Redirects</h2>
@@ -95,6 +142,7 @@ description: "How to do hard to find things"
 
       </section>    
 
+    <!-- Displaying Podcasts    ================================================== -->
       <section id="will-podcasts">
         <div class="page-header">
           <h2>WILL Podcasts</h2>
