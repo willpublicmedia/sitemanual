@@ -81,8 +81,8 @@ description: "The CMS Framework and How the Site is Constructed"
           </div>
           <p class="lead">Every CMS-driven website consists of a bundle of things, like a file system, a database, scripts, and possibly a framework. Here's what we're using:</p>
           <ul>
-            <li>ExpressionEngine CMS, running on a LAMP stack inside a virtual machine. Everything from the VM on up to the CMS is managed by Taylor Judd, our Internet Technology Specialist/SysAdmin.</li>
-            <li>the Bootstrap framework, mentioned above. The core Bootstrap files are in the <code>/themes/site_themes/will2.1</code> folder on the server. These files include all the Bootstrap JavaScript, the never-edit-these Bootstrap stylesheets, an images folder containing theme images, and a plugins folder for additional JS and CSS files. You'll also find a 'weather' folder here which contains custom JS and CSS files for the /weather page.</li>
+            <li>ExpressionEngine CMS, running on a LAMP stack inside a virtual machine.</li>
+            <li>The Bootstrap framework, mentioned above. The core Bootstrap files are in the <code>/themes/site_themes/will2.1</code> folder on the server. These files include all the Bootstrap JavaScript, the never-edit-these Bootstrap stylesheets, an images folder containing theme images, and a plugins folder for additional JS and CSS files. You'll also find a 'weather' folder here which contains custom JS and CSS files for the /weather page.</li>
             <li>Overrides of default Boostrap styles, and custom styles defined for the WILL 2.1 site, are contained in the file custom.css.</li>
             <li>We're using MediaElement.js for our audio players. All the files for this are in <code>/themes/site_themes/mediaelement</code>.</li>
             <li>The folder <code>/will2.1/plugins/weather</code> contains the JavaScript used on the weather/index page. Inside this folder, the images folder contains a set of weather icons used by the Yahoo Weather plugin that generates the weather icon seen in the header of every page.</li>
@@ -129,7 +129,7 @@ description: "The CMS Framework and How the Site is Constructed"
 
 <pre>
 {preload_replace:pre_title="News"}
-{preload_replace:pre_channel="features|news|newsnational"}
+{preload_replace:pre_channel="features|news|newsnational|longerlisten|21stshow"}
 {preload_replace:pre_logo="IPM_Logo_Main.png"}
 {preload_replace:pre_description="In-depth reporting from WILL, NPR, and other sources"}
 {preload_replace:pre_keywords="News, Public Affairs, WILL, Illinois Public Media, Radio, Public Radio, University of Illinois, Illinois, NPR"}
@@ -152,8 +152,6 @@ description: "The CMS Framework and How the Site is Constructed"
 {preload_replace:pre_show_tags="yes"}
 {preload_replace:pre_show_date="yes"}
 {preload_replace:pre_show_video="no"}
-{preload_replace:pre_show_sharelink="yes"}
-{preload_replace:pre_show_commentlink="yes"}
 {sn_articles}
 </pre>
 
@@ -163,10 +161,11 @@ description: "The CMS Framework and How the Site is Constructed"
 
 <h4>Less obvious variables</h4>
 <ul>
-  <li>The <code>{pre_highlights_categories}</code> variable contains the Entry ID number of an entry in Channel Descriptions. So "19028" is the entry_id for the entry "Illinois Public Media News" in the Channel Desciptions channel. </li>
+  <li>The <code>{pre_channel_description_entry_id}</code> variable contains the Entry ID number of an entry in the Channel Descriptions channel. Ths content of this entry is displayed at the top of the News home page. So "19028" is the entry_id for for that entry, hard-coded into the "news/index" template. Every channel has its own Channel Description entry, which gives you a unique entry_id for the channel's home page.</li>
   <li><code>{pre_tag_channel_template}</code> is a variable passed to template in the "tags" template group. Any time you see a tag cloud, or a page using the "tags" template, this variable is important for connecting things.</li>
   <li><code>{pre_offset}</code> is used as a conditional value for <code>{sn_articles}</code>. If the value is "3" then three stories will appear at the top of the web page as seen on the News home page: <a href="http://will.illinois.edu/news/">http://will.illinois.edu/news/</a>. If the value is not "3" the the stories will simply flow down the page like most sections do. As seen on the News home page, this allows more than one story to appear above the fold. (The value of this is increasingly dubious with the acsendance of mobile, but for now that's how we're laying this out.)</li>
-  <li>Most of the remaining <code>{preload_replace}</code> variables are switches used in conditionals in the snippets. You can figure them out pretty easily by reading the snippet code. There are a few deprecated variables, like <code>{pre_show_commentlink}</code> which was used to enable or disable commenting for a given channel template. But since then we disabled commenting for the entire site, so this variable doesn't currently do anything. Similarly you might find other variables that don't do anything, which is something to clean up during the next iteration of the site.</li>
+  <li>Most of the remaining <code>{preload_replace}</code> variables are switches used in conditionals in the snippets. You can figure them out pretty easily by reading the snippet code.</li>
+  <li><strong>Warning:</strong> There are likely some templates that have deprecated <code>{pre_something}</code> variables that no longer used in the snippets, which is something to clean up during the next iteration of the site.</li>
   </ul>
 </section>
 
