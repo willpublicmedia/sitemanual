@@ -125,7 +125,7 @@ description: "The CMS Framework and How the Site is Constructed"
 
 <p>By pre-defining many variables in the Templates, we can re-use the same Snippets to generate pages and feeds for the vast majority of the site.</p> 
 
-<h4>Example: new/index template</h4>
+<h4>Example: news/index template</h4>
 
 <pre>
 {preload_replace:pre_title="News"}
@@ -159,14 +159,14 @@ description: "The CMS Framework and How the Site is Constructed"
 
 <p>As you can see there are many defined variables being passed to the snippets. The most important pieces of this are the variable <code>{pre_channel}</code>, which defines the channel or channels being passed to the snippet, and the last line <code>{sn_articles}</code> which defines which snippet all this is passed to.</p>
 
-<p>If you study the snippet, most of the rest are fairly obvious. For example <code>{pre_logo}</code> defines which image file to use in the header for the logo. <code>{pre_description}</code> and <code>{pre_keywords}</code> supply values for the meta tags in the <code><head></code> section.</p>
+<p>If you study the snippet, most of the rest is fairly obvious. For example <code>{pre_logo}</code> defines which image file to use in the header for the logo. <code>{pre_description}</code> and <code>{pre_keywords}</code> supply values for the meta tags in the <code><head></code> section.</p>
 
 <h4>Less obvious variables</h4>
 <ul>
   <li>The <code>{pre_highlights_categories}</code> variable contains the Entry ID number of an entry in Channel Descriptions. So "19028" is the entry_id for the entry "Illinois Public Media News" in the Channel Desciptions channel. </li>
   <li><code>{pre_tag_channel_template}</code> is a variable passed to template in the "tags" template group. Any time you see a tag cloud, or a page using the "tags" template, this variable is important for connecting things.</li>
   <li><code>{pre_offset}</code> is used as a conditional value for <code>{sn_articles}</code>. If the value is "3" then three stories will appear at the top of the web page as seen on the News home page: <a href="http://will.illinois.edu/news/">http://will.illinois.edu/news/</a>. If the value is not "3" the the stories will simply flow down the page like most sections do. As seen on the News home page, this allows more than one story to appear above the fold. (The value of this is increasingly dubious with the acsendance of mobile, but for now that's how we're laying this out.)</li>
-  <li>Most of the remaining <code>{preload_replace}</code> variables are switches used in conditionals in the snippets. You can figure them out pretty easily by reading the snippet code. There are a few deprecated variable, like <code>{pre_show_commentlink}</code> which was used to enable or disable commenting for a given channel template. But since then we disabled commenting for the entire site, so this variable doesn't currently do anything. Similarly you might find other variables that don't do anything, which is something to clean up during the next iteration of the site.</li>
+  <li>Most of the remaining <code>{preload_replace}</code> variables are switches used in conditionals in the snippets. You can figure them out pretty easily by reading the snippet code. There are a few deprecated variables, like <code>{pre_show_commentlink}</code> which was used to enable or disable commenting for a given channel template. But since then we disabled commenting for the entire site, so this variable doesn't currently do anything. Similarly you might find other variables that don't do anything, which is something to clean up during the next iteration of the site.</li>
   </ul>
 </section>
 
@@ -205,7 +205,7 @@ description: "The CMS Framework and How the Site is Constructed"
           <li>{sn_article}</li>
         </ul>
 
-        <p>These two snippets contain the markup and logic for about 99 percent of the entire site.  The {sn_article} snippet generates home “list” pages of content for most of the major WILL content channels, and the {sn_article} snippet creates single-entry pages for each entry in that channel.</p>
+        <p>These two snippets contain the markup and logic for about 99 percent of the entire site.  The {sn_articles} snippet generates home “list” pages of content for most of the major WILL content channels, and the {sn_article} snippet creates single-entry pages for each entry in that channel.</p>
 
         <p>For each content channel, its index template uses {sn_articles} to create a Home page with a number of entries in summary form. In the template group for that channel, there will be a “story” or “program” template that uses {sn_article} to generate full, single-entry pages. The {sn_articles} snippet is expecting a url_title variable to be passed as part of any links to it (usually as a segment_3), so it can pull in the data for that entry.</p> 
 
@@ -216,6 +216,8 @@ description: "The CMS Framework and How the Site is Constructed"
         <p>And here is a News story url containing a url_title variable as part of its url:</p>
         
         <blockquote>http://will.illinois.edu/news/story/school-consolidation-referendum-sparks-disagreement</blockquote>
+
+        <p>So EE sees "/news" in the url so it calls the "news" template group. It sees "/story" so it calls the "story" template in the "news" template group. Finally, it looks for an entry that matches the last segment "/school-consolidation-referendum-sparks-disagreement" and renders the page with the content in that entry.</p>
 
 
         </section>    
